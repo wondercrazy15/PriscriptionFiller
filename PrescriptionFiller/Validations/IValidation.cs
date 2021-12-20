@@ -5,5 +5,6 @@ namespace PrescriptionFiller.Validations
     {
         bool EmailValidation(string email);
         bool PasswordValidation(string password);
+        bool PhoneNumberValidation(string phonenumber);
     }
 }

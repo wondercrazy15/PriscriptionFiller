@@ -55,5 +55,29 @@ namespace PrescriptionFiller.Validations
                 return false;
             }
         }
+        public bool PhoneNumberValidation(string phonenumber)
+        {
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(phonenumber))
+                {
+                    Regex regex = new Regex(@"\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})");
+                    Match match = regex.Match(phonenumber);
+                    if (match.Success)
+                        return true;
+                    else
+                        return false;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+        }
     }
 }

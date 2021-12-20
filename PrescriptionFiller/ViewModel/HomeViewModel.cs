@@ -174,8 +174,7 @@ namespace PrescriptionFiller.ViewModel
                     prescriptionItem.thumbPath = thumbPath;
                     prescriptionItem.userId = int.Parse("201"); //Constants.user_id;
                     LocalPrescriptionDatabase.Instance.SaveItem(prescriptionItem);
-
-
+                    NewCameraData();
                 });
             }
             catch (Exception ex)
@@ -212,91 +211,63 @@ namespace PrescriptionFiller.ViewModel
             NewLoadingPopUp.Show(_navigation);
             Device.BeginInvokeOnMainThread(async () =>
             {
-                //IEnumerable<PrescriptionItem> localPrescriptionItems = LocalPrescriptionDatabase.Instance.GetItems(201);//Constants.user_id
-                //Console.WriteLine("localPrescriptionItems => " + localPrescriptionItems.Count());
-                //foreach (PrescriptionItem localPrescriptionItem in localPrescriptionItems)
-                //{
-                //    //API.PrescriptionRecord serverPrescriptionRecord;
-                //    //serverPrescriptionRecord = serverPrescriptionRecordsDict.getValue(localPrescriptionItem.path);
-
-                //    //if (serverPrescriptionRecord == null)
-                //    //    continue;
-
-                //    //int serverPrescriptionId = (serverPrescriptionRecord == null) ? -1 : serverPrescriptionRecord.id;
-                //    //int serverPharmacyId = (serverPrescriptionRecord == null) ? -1 : Int32.Parse(serverPrescriptionRecord.pharmacy_id);
-                //    //int localPrescriptionId = localPrescriptionItem.serverPrescriptionId;
-                //    //string serverStatus = (serverPrescriptionRecord == null) ? "" : nvl(serverPrescriptionRecord.fax_status);
-                //    //string localStatus = nvl(localPrescriptionItem.status);
-                //    //string serverPrescriptionCreatedDt = (serverPrescriptionRecord == null) ? "" : nvl(serverPrescriptionRecord.created_at);
-
-                //    //if (serverPrescriptionRecord != null)
-                //    //{
-                //    //    if (!serverPrescriptionId.Equals(localPrescriptionId) ||
-                //    //        !serverStatus.Equals(localStatus))
-                //    //    {
-                //    //        localPrescriptionItem.status = serverStatus;
-                //    //        localPrescriptionItem.serverPrescriptionId = serverPrescriptionId;
-                //    //        localPrescriptionItem.createdDt = serverPrescriptionCreatedDt;
-                //    //        LocalPrescriptionDatabase.Instance.SaveItem(localPrescriptionItem);
-                //    //    }
-                //    //}
-
-                //    //// todo add call to get Pharamacy info by pharmacy id
-                //    //if (serverPharmacyId > 0 && !processedPharamcyId(serverPharmacyId, API.Instance.pharmacyInfos))
-                //    //{
-                //    //    await API.Instance.RetrievePharmaciesById(HomePage.Instance.Navigation, serverPharmacyId,
-                //    //       retrievePharmaciesByIdSuccess,
-                //    //       retrievePharmaciesByIdFail);
-                //    //}
-                //}
-                //await NewLoadingPopUp.Dismiss(_navigation);
-
-
-
-
-
-                var result = await _prescriptionRecord.GetPrescriptionRecordResponse();
-                if (result != null)
+                IEnumerable<PrescriptionItem> localPrescriptionItems = LocalPrescriptionDatabase.Instance.GetItems(201);//Constants.user_id
+                Console.WriteLine("localPrescriptionItems => " + localPrescriptionItems.Count());
+                foreach (PrescriptionItem localPrescriptionItem in localPrescriptionItems)
                 {
-                    prescriptionRecordModel = result;
-                    GetNewCameraImage.Clear();
-                    foreach (var i in prescriptionRecordModel.data)
+                    GetNewCameraImage.Add(new CameraModel
                     {
-                        string pharmacy = "", physician = "", image = "";
-                        byte[] imageBytes;
-                        ImageSource image1;
-                        if (i.pharmacy_id != null)
-                            pharmacy = i.pharmacy_id.ToString();
-                        else
-                            pharmacy = "";
-
-                        if (i.physician_id != null)
-                            physician = i.physician_id.ToString();
-                        else
-                            physician = "";
-
-                        if (i.image_binary != null)
-                        {
-                            if (i.image_binary != "")
-                            {
-                                imageBytes = Convert.FromBase64String(i.image_binary);
-                                image1 = Xamarin.Forms.ImageSource.FromStream(() => new MemoryStream(imageBytes));
-                                GetNewCameraImage.Add(new CameraModel
-                                {
-                                    getCameraImage = image1
-                                });
-                            }
-                        }
-
-
-                    }
-                    await NewLoadingPopUp.Dismiss(_navigation);
+                        getCameraImage = localPrescriptionItem.thumbPath
+                    });
                 }
-                else
-                {
-                    await NewLoadingPopUp.Dismiss(_navigation);
-                }
+                await NewLoadingPopUp.Dismiss(_navigation);
             });
+
+
+
+            //var result = await _prescriptionRecord.GetPrescriptionRecordResponse();
+            //if (result != null)
+            //{
+            //    prescriptionRecordModel = result;
+            //    GetNewCameraImage.Clear();
+            //    foreach (var i in prescriptionRecordModel.data)
+            //    {
+            //        string pharmacy = "", physician = "", image = "";
+            //        byte[] imageBytes;
+            //        ImageSource image1;
+            //        if (i.pharmacy_id != null)
+            //            pharmacy = i.pharmacy_id.ToString();
+            //        else
+            //            pharmacy = "";
+
+            //        if (i.physician_id != null)
+            //            physician = i.physician_id.ToString();
+            //        else
+            //            physician = "";
+
+            //        if (i.image_binary != null)
+            //        {
+            //            if (i.image_binary != "")
+            //            {
+            //                imageBytes = Convert.FromBase64String(i.image_binary);
+            //                image1 = Xamarin.Forms.ImageSource.FromStream(() => new MemoryStream(imageBytes));
+            //                GetNewCameraImage.Add(new CameraModel
+            //                {
+            //                    getCameraImage = image1
+            //                });
+            //            }
+            //        }
+
+
+            //    }
+            //    await NewLoadingPopUp.Dismiss(_navigation);
+            //}
+            //else
+            //{
+            //    await NewLoadingPopUp.Dismiss(_navigation);
+            //}
+
+
         }
 
         private async void PrescriptionData()

@@ -74,6 +74,7 @@
     <Compile Include="service\DroidCameraService.cs" />
     <Compile Include="Renderer\CustomPickerRenderer.cs" />
     <Compile Include="Renderer\FloatingButtonRenderer.cs" />
+    <Compile Include="Renderer\ResizingAndroid.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

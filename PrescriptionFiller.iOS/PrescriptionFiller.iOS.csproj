@@ -73,6 +73,7 @@
     <Compile Include="Renderer\CustomDatePickerRenderer.cs" />
     <Compile Include="services\iOSCameraService.cs" />
     <Compile Include="Renderer\FloatingButtonRenderer.cs" />
+    <Compile Include="services\ResizingiOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

@@ -71,7 +71,7 @@ namespace PrescriptionFiller.Services
         {
             try
             {
-                string url = Constants.baseUrl + "user";
+                string url = Constants.baseUrl + "public/api/user/";
                 HttpClient client = new HttpClient();
 
                 var content = new FormUrlEncodedContent(new[]
