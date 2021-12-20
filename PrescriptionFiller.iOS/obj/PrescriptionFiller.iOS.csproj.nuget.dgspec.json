@@ -1,0 +1,161 @@
+{
+  "format": 1,
+  "restore": {
+    "/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/PrescriptionFiller.iOS.csproj": {}
+  },
+  "projects": {
+    "/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/PrescriptionFiller.iOS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/PrescriptionFiller.iOS.csproj",
+        "projectName": "PrescriptionFiller.iOS",
+        "projectPath": "/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/PrescriptionFiller.iOS.csproj",
+        "packagesPath": "/Users/namac-mini-06/.nuget/packages/",
+        "outputPath": "/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/namac-mini-06/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "xamarinios10"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "xamarinios10": {
+            "projectReferences": {
+              "/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller/PrescriptionFiller.csproj": {
+                "projectPath": "/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller/PrescriptionFiller.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "xamarinios10": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[2.0.0.14, )"
+            },
+            "Xam.Plugin.Media": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.5.3.2, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.8.0.1451, )"
+            },
+            "Xamarin.TestCloud.Agent": {
+              "target": "Package",
+              "version": "[0.21.9, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller/PrescriptionFiller.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller/PrescriptionFiller.csproj",
+        "projectName": "PrescriptionFiller",
+        "projectPath": "/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller/PrescriptionFiller.csproj",
+        "packagesPath": "/Users/namac-mini-06/.nuget/packages/",
+        "outputPath": "/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/namac-mini-06/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[2.0.0.14, )"
+            },
+            "Xam.Plugin.Media": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.5.3.2, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.8.0.1451, )"
+            },
+            "Xamarin.Forms.InputKit": {
+              "target": "Package",
+              "version": "[3.7.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

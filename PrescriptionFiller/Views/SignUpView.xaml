@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customcontrols="clr-namespace:PrescriptionFiller.CustomControls"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             NavigationPage.HasNavigationBar="True"
+             x:Class="PrescriptionFiller.Views.SignUpView"
+             BackgroundColor="White">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+
+            <ImageButton Source="back_arrow" FlowDirection="LeftToRight" IsEnabled="True"
+                       HeightRequest="40" Margin="0,0,0,0" Command="{Binding BackCommand}" BackgroundColor="Transparent"
+                       />
+            <Label FlowDirection="MatchParent" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+                   Text="Create Account"
+                   FontSize="20" Margin="0,0,40,0"
+                   FontAttributes="Bold"
+                   TextColor="White" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+     <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Red"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <ScrollView>
+                <StackLayout Margin="15" Spacing="20">
+                <StackLayout Spacing="0">
+                    <customcontrols:CustomEntry Text="{Binding FirstName}" FontSize="Medium" TextChanged="Full_Name_Entry_TextChanged" Placeholder="First Name"/>
+                    <BoxView HeightRequest="1" x:Name="FullNameErrorColor" BackgroundColor="Gray"/>
+                </StackLayout>
+                <StackLayout Spacing="0">
+                    <customcontrols:CustomEntry Text="{Binding LastName}" TextChanged="Last_Name_Entry_TextChanged" Placeholder="Last Name"/>
+                    <BoxView x:Name="LastNameErrorColor" HeightRequest="1" BackgroundColor="Gray"/>
+                </StackLayout>
+                <Label Text="Birthday" TextColor="Black"/>
+                <customcontrols:CustomDatePicker Date="{Binding DateOfBirth}" TextColor="Black" />
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                   <input:RadioButtonGroupView Orientation="Horizontal" Spacing="10" SelectedItemChanged="RadioButtonGroupView_SelectedItemChanged">
+                       <input:RadioButton Text="Male" TextFontSize="Medium" TextColor="Black" />
+                       <input:RadioButton Text="Female" TextFontSize="Medium" TextColor="Black"/>
+                   </input:RadioButtonGroupView>
+                </StackLayout>
+               <StackLayout Spacing="0">
+                    <customcontrols:CustomEntry Text="{Binding PhoneNumber}" TextChanged="Phone_Entry_TextChanged" Placeholder="Phone Number"/>
+                    <BoxView x:Name="PhoneNumberErrorColor" HeightRequest="1" BackgroundColor="Gray"/>
+                </StackLayout>
+                 <StackLayout Spacing="0">
+                    <customcontrols:CustomEntry Text="{Binding Email}" TextChanged="EmailEntry_TextChanged" Placeholder="Email"/>
+                    <BoxView x:Name="EmailErrorColor" HeightRequest="1" BackgroundColor="Gray" />
+                </StackLayout>
+                 <StackLayout Spacing="0">
+                    <customcontrols:CustomEntry x:Name="Password" Text="{Binding Password}" TextChanged="Password_Entry_TextChanged" Placeholder="Password" IsPassword="True"/>
+                    <BoxView x:Name="PasswordErrorColor" HeightRequest="1" BackgroundColor="Gray" />
+                </StackLayout>
+                 <StackLayout Spacing="0">
+                    <customcontrols:CustomEntry x:Name="Co_Password" Text="{Binding Co_Password}" TextChanged="Co_Password_Entry_TextChanged" Placeholder="Confirm Password" IsPassword="True"/>
+                    <BoxView x:Name="Co_PasswordErrorColor" HeightRequest="1" BackgroundColor="Gray" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="0">
+                    <CheckBox CheckedChanged="Show_CheckBox_CheckedChanged"/>
+                    <Label Text="Show Password" TextColor="Black" BackgroundColor="Transparent" VerticalOptions="Center"/>
+                </StackLayout>
+                <Button Command="{Binding SignUpCommand}" Margin="0,10,0,20" Text="Sign Up" Style="{StaticResource ButtonStyle}"/>
+            </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customcontrols="clr-namespace:PrescriptionFiller.CustomControls"
+    x:Class="PrescriptionFiller.Views.EditAccountInfoView"
+    BackgroundColor="White">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <ImageButton Source="back_arrow" FlowDirection="LeftToRight" IsEnabled="True"
+                       HeightRequest="40" Margin="0,0,0,0" Command="{Binding BackCommand}" BackgroundColor="Transparent"
+                       />
+            <Label FlowDirection="MatchParent" VerticalOptions="Center" 
+                   Text=" Edit Account Info"
+                   FontSize="20" Margin="0,0,40,0"
+                   FontAttributes="Bold"
+                   TextColor="White" />
+            <!--HorizontalOptions="CenterAndExpand"-->
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="25">
+                <Grid ColumnSpacing="10" RowSpacing="0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Text="First Name" FontSize="Medium" FontAttributes="Italic" TextColor="Silver"  />
+                    <customcontrols:CustomEntry
+                            Grid.Row="1" Grid.Column="0"
+                            Margin="-5,0,0,0"
+							x:Name="firstNameText"
+							Text="{Binding firstName}"
+							TextColor="Black"
+							IsPassword="false"
+							Placeholder="John"
+							 />
+                    <BoxView Grid.Row="2" Grid.Column="0" HeightRequest="1" BackgroundColor="Gray" Margin="0,0,0,0"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="Last Name" FontSize="Medium" FontAttributes="Italic" TextColor="Silver"   />
+                    <customcontrols:CustomEntry
+                            Margin="-5,0,0,0"
+							x:Name="lastNameText"
+							TextColor="Black"
+							IsPassword="false"
+							Text="{Binding lastName}"
+							Placeholder="Done"
+							Grid.Row="1" Grid.Column="1" />
+                    <BoxView Grid.Row="2" Grid.Column="1" HeightRequest="1" BackgroundColor="Gray" Margin="0,0,0,0"/>
+                    <StackLayout  Margin="0,10,0,0" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="0">
+                                <Label Text="Date Of Birth"  FontSize="Medium" FontAttributes="Italic" TextColor="Silver"/>
+                                <customcontrols:CustomDatePicker Margin="-4,0,0,0" TextColor="Black" Date="{Binding dob}" x:Name="dateOfBirthText">
+                                    <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                                </customcontrols:CustomDatePicker>
+                            </StackLayout>
+                            <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical"  >
+                                <Label Margin="0,0,0,0" Text="Gender" FontSize="Medium" FontAttributes="Italic" TextColor="Silver"  />
+                                <Label Margin="0,3,0,3" Text="{Binding gender}" FontSize="Medium" TextColor="Black"  />
+                                <BoxView  HeightRequest="1" VerticalOptions="End" BackgroundColor="Gray"/>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout Margin="0,5,0,0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="0">
+                                <Label  Text="Phone" FontSize="Medium" FontAttributes="Italic" TextColor="Silver"  />
+                                <customcontrols:CustomEntry
+                                    Margin="-5,-5,0,0"
+							        x:Name="phoneNumberText"
+							        TextColor="Black"
+							        IsPassword="false"
+							        Keyboard="Telephone"
+							        Text="{Binding phone}"
+							        Placeholder="565-344-5578"/>
+                                <BoxView  HeightRequest="1" BackgroundColor="Gray" />
+                            </StackLayout>
+                            <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical"  >
+                                <Label  Text="Password" FontSize="Medium" FontAttributes="Italic" TextColor="Silver"  />
+                                <customcontrols:CustomEntry
+                                   Margin="-5,-5,0,0"
+                                    x:Name="password"
+							        TextColor="Black"
+							        IsPassword="true"
+							        Text="{Binding password}"
+							        Placeholder="enter password"/>
+                                <BoxView  HeightRequest="1" BackgroundColor="Gray" />
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </Grid>
+                <StackLayout Margin="0,10,0,0">
+                    <Label Text="Email" FontSize="Medium" FontAttributes="Italic" TextColor="Silver"  YAlign="Center" />
+                    <customcontrols:CustomEntry
+                        Margin="-5,0,0,0"
+                        x:Name="emailAddress"
+                        TextColor="Black"
+                        Text="{Binding emailAdress}"
+                        />
+                    <BoxView  HeightRequest="1" BackgroundColor="Gray" />
+                    <Label Margin="0,10,0,0" Text="Allergies/Reactions" FontSize="Medium" FontAttributes="Italic" TextColor="Silver"  YAlign="Center" />
+                    <customcontrols:CustomEntry
+                        Margin="-5,0,0,0"
+                        x:Name="allergies"
+                        TextColor="Black"
+                        Text="{Binding allerigies}"
+                        />
+                    <BoxView  HeightRequest="1" BackgroundColor="Gray" />
+                    <Label Margin="0,10,0,0" Text="Medical Insurance Provider" FontSize="Medium" FontAttributes="Italic" TextColor="Silver"  YAlign="Center" />
+                    <customcontrols:CustomEntry
+                            Margin="-5,-5,0,0"
+                           x:Name="medicalInsuranceProvider"
+                           TextColor="Black"
+                           Text="{Binding medicalInsuranceProvider}"/>
+                    <BoxView  HeightRequest="1" BackgroundColor="Gray" />
+                    <Label Margin="0,10,0,0" Text="Carrier" FontSize="Medium" FontAttributes="Italic" TextColor="Silver"  YAlign="Center" />
+                    <customcontrols:CustomEntry
+                        Margin="-5,-5,0,0"
+                        x:Name="carrierNumber"
+                        TextColor="Black"
+                        Text="{Binding carrier}"/>
+                    <BoxView  HeightRequest="1" BackgroundColor="Gray" />
+                    <Label Margin="0,10,0,0" Text="Plan" FontSize="Medium" FontAttributes="Italic" TextColor="Silver"  YAlign="Center" />
+                    <customcontrols:CustomEntry
+                         Margin="-5,-5,0,0"
+                        x:Name="planNumber"
+                        TextColor="Black"
+                        Text="{Binding plan}"/>
+                    <BoxView  HeightRequest="1" BackgroundColor="Gray" />
+                    <Label Margin="0,10,0,0" Text="Member ID" FontSize="Medium" FontAttributes="Italic" TextColor="Silver" YAlign="Center" />
+                    <customcontrols:CustomEntry
+                        Margin="-5,-5,0,0"
+                        x:Name="memberId"
+                        TextColor="Black"
+                        Text="{Binding memberId}"/>
+                    <BoxView  HeightRequest="1" BackgroundColor="Gray" />
+                    <Label Margin="0,10,0,0" Text="Issue" FontSize="Medium" FontAttributes="Italic" TextColor="Silver"  YAlign="Center" />
+                    <customcontrols:CustomEntry
+                        Margin="-5,-5,0,0"
+                        x:Name="issueNumber"
+                        TextColor="Black"
+                        Text="{Binding issue}"/>
+                    <BoxView  HeightRequest="1" BackgroundColor="Gray" />
+                    <Label Margin="0,10,0,0" Text="Personal Health Number" FontSize="Medium" FontAttributes="Italic" TextColor="Silver"  YAlign="Center" />
+                    <customcontrols:CustomEntry
+                        Margin="-5,-5,0,0"
+                        x:Name="personalHealthNumber"
+                        TextColor="Black"
+                        Text="{Binding personalHeathNumber}"/>
+                    <BoxView  HeightRequest="1" BackgroundColor="Gray" />
+                    <Button Margin="0,10,0,20"  BackgroundColor="#FF0000" Text="Save"  TextColor="White" BorderRadius="0"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

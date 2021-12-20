@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "hSoGGxuaV3Pp2rZjp/7BeE3NO0dy54ZQeP0ZUZTHBJWxJd71/l44gA/ESSzxbb+NZj3C/eWbTKpE+YGXgukESw==",
+  "success": true,
+  "projectFilePath": "/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/PrescriptionFiller.iOS.csproj",
+  "expectedPackageFiles": [
+    "/Users/namac-mini-06/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
+    "/Users/namac-mini-06/.nuget/packages/rg.plugins.popup/2.0.0.14/rg.plugins.popup.2.0.0.14.nupkg.sha512",
+    "/Users/namac-mini-06/.nuget/packages/xam.plugin.media/5.0.1/xam.plugin.media.5.0.1.nupkg.sha512",
+    "/Users/namac-mini-06/.nuget/packages/xamarin.essentials/1.5.3.2/xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "/Users/namac-mini-06/.nuget/packages/xamarin.forms/4.8.0.1451/xamarin.forms.4.8.0.1451.nupkg.sha512",
+    "/Users/namac-mini-06/.nuget/packages/xamarin.forms.inputkit/3.7.2/xamarin.forms.inputkit.3.7.2.nupkg.sha512",
+    "/Users/namac-mini-06/.nuget/packages/xamarin.testcloud.agent/0.21.9/xamarin.testcloud.agent.0.21.9.nupkg.sha512"
+  ],
+  "logs": []
+}

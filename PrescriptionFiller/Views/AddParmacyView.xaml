@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:customcontrols="clr-namespace:PrescriptionFiller.CustomControls"
+    x:Class="PrescriptionFiller.Views.AddParmacyView"
+    BackgroundColor="White">
+     <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Red"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                 <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+      <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <ImageButton Source="back_arrow" FlowDirection="LeftToRight" IsEnabled="True"
+                       HeightRequest="40" Margin="0,0,0,0" Command="{Binding BackCommand}" BackgroundColor="Transparent"
+                       />
+            <Label FlowDirection="MatchParent" VerticalOptions="Center"
+                   HorizontalOptions="Start"
+                   Text="Add Pharmacy"
+                   FontSize="20" Margin="0,0,40,0"
+                   FontAttributes="Bold"
+                   TextColor="White" />
+            <!--HorizontalOptions="CenterAndExpand"-->
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10,5,10,10" Spacing="0">
+        <Label Text="Search By City" FontAttributes="Bold" Padding="0" Margin="0"/>
+        <customcontrols:CustomEntry Text="{Binding cityTxt}" Placeholder="Enter City Name" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0"/>
+        <BoxView x:Name="city" BackgroundColor="Red" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,0,0,20"/>
+        <Label Text="OR" FontAttributes="Bold" Padding="0" Margin="0" HorizontalOptions="Center" TextColor="Red"/>
+        <Label Text="Search By Pharmacy Name" FontAttributes="Bold" Padding="0" Margin="0"/>
+        <customcontrols:CustomEntry Text="{Binding pharmacyNameTxt}" Placeholder="Enter Pharmacy Name" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0"/>
+        <BoxView x:Name="pharmacyName" BackgroundColor="Red" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,0,0,20"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="5" Margin="0" Padding="0">
+             <!--BackgroundColor="Orange"-->
+            <Button Text="Search" Command="{Binding SendToPharmacyCommand}" x:Name="SignInButton" Style="{StaticResource ButtonStyle}"
+                        VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"/>
+            <Button Text="Use Location" Command="{Binding SendToPharmacyCommand}" x:Name="locationButton" Style="{StaticResource ButtonStyle}"
+                            VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+            <ScrollView HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand">
+                <!--BackgroundColor="Red"-->
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                     <!--BackgroundColor="Yellow"-->
+                    
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+        
+
+        <Button Text="Send To Pharmacy" Command="{Binding SendToPharmacyCommand}" x:Name="SignInButton1" Style="{StaticResource ButtonStyle}"
+                        VerticalOptions="EndAndExpand"/>
+    </StackLayout>
+</ContentPage>

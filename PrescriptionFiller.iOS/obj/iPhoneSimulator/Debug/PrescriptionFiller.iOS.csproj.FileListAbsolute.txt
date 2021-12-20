@@ -1,0 +1,119 @@
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/PrescriptionFiller.iOS.exe
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/PrescriptionFiller.iOS.pdb
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/Rg.Plugins.Popup.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/Rg.Plugins.Popup.pdb
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/Plugin.Media.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/Plugin.Media.pdb
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/Xamarin.Essentials.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/Xamarin.Essentials.pdb
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Core.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Core.pdb
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Platform.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Xaml.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Xaml.pdb
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/ar/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/ca/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/cs/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/da/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/de/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/el/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/es/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/fi/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/fr/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/he/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/hi/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/hr/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/hu/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/id/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/it/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/ja/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/ko/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/ms/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/nb/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/nl/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/pl/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/pt-BR/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/pt/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/ro/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/ru/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/sk/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/sv/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/th/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/tr/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/uk/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/vi/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/zh-HK/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/zh-Hans/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/zh-Hant/Xamarin.Forms.Platform.iOS.resources.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/Plugin.InputKit.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/Calabash.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/PrescriptionFiller.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Platform.iOS.dll
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/PrescriptionFiller.pdb
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Platform.iOS.pdb
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/actool/_PartialAppManifest.items
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/actool/_BundleResourceWithLogicalName.items
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/ibtool/_BundleResourceWithLogicalName.items
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/coremlc/_PartialAppManifest.items
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/coremlc/_BundleResourceWithLogicalName.items
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/logowithtext.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/camera_icon.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/failed_mini.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/failed.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/ic_launcher.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_calender.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_camera_backup.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_camera.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_check_off.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_check_on_backup.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_check_on.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_confirm.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_connection.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_edit_small.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_edit.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_ellipse1.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_ellipse2.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_home_small.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_letter.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_loader.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_lock_small.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_lock.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_menu.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_next_arrow.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_orig.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_phone.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_printer.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_radial1.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_radial2.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_search.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_switch_camera.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_user_small.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_user.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_x_close_orange.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon_x_close_red.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_icon.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_logo_withtext.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_popup_BL.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_popup_BR.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_popup_tail.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_popup_tail1.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_popup_TL.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/pfa_popup_TR.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/Queue_50.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/sending.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/close.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/medical-history.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/prescription.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/logout_icon.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/Menu_icon.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/new_icon.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/sent_icon.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/down_arrow_icon.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/back_arrow.png
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-14.5/optimized/
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/PrescriptionFiller.iOS.csproj.AssemblyReference.cache
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/PrescriptionFiller.iOS.csproj.CoreCompileInputs.cache
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/PrescriptionFiller.iOS.csproj.CopyComplete
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/PrescriptionFiller.iOS.exe
+/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.iOS/obj/iPhoneSimulator/Debug/PrescriptionFiller.iOS.pdb

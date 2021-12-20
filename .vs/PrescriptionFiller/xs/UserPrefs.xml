@@ -1,0 +1,56 @@
+﻿<Properties StartupConfiguration="{AAE637FF-DB38-42FF-B16A-07A1055114F1}|Default">
+  <MonoDevelop.Ide.ItemProperties.PrescriptionFiller.iOS TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C715727C-DB60-420D-97FC-470E32B4C48A" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PrescriptionFiller/ViewModel/LoginViewModel.cs">
+    <Files>
+      <File FileName="PrescriptionFiller/Views/EditAccountInfoView.xaml" Line="14" Column="27" />
+      <File FileName="PrescriptionFiller/Validations/Validation.cs" />
+      <File FileName="PrescriptionFiller/Views/AccountInfoView.xaml" />
+      <File FileName="PrescriptionFiller/Views/MedicalHistoryView.xaml" />
+      <File FileName="PrescriptionFiller/Views/EditMedicalHistoryView.xaml" />
+      <File FileName="PrescriptionFiller/Views/HomePage.xaml" />
+      <File FileName="PrescriptionFiller/ViewModel/AddPharmacyDetailViewModel.cs" />
+      <File FileName="PrescriptionFiller/Views/AddNewPrescriptionView.xaml" />
+      <File FileName="PrescriptionFiller/Views/HomeViewDetail.xaml" />
+      <File FileName="PrescriptionFiller/Views/HomeViewMaster.xaml" />
+      <File FileName="PrescriptionFiller/Views/HomeView.xaml" />
+      <File FileName="PrescriptionFiller/Views/HomeViewMenuItem.cs" />
+      <File FileName="PrescriptionFiller/Views/LoginView.xaml" />
+      <File FileName="PrescriptionFiller/Views/SignUpView.xaml" />
+      <File FileName="PrescriptionFiller/ViewModel/LoginViewModel.cs" Line="81" Column="22" />
+      <File FileName="PrescriptionFiller/Global/Constants.cs" />
+      <File FileName="PrescriptionFiller/ViewModel/EditAccountInfoViewModel.cs" />
+      <File FileName="PrescriptionFiller/App.xaml" />
+      <File FileName="PrescriptionFiller/ViewModel/MasterViewModel.cs" />
+      <File FileName="PrescriptionFiller/ViewModel/AccountInfoViewModel.cs" />
+      <File FileName="PrescriptionFiller/ViewModel/HomeViewModel.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PrescriptionFiller" expanded="True">
+            <Node name="PrescriptionFiller" expanded="True">
+              <Node name="ViewModel" expanded="True">
+                <Node name="LoginViewModel.cs" selected="True" />
+              </Node>
+              <Node name="Views" expanded="True" />
+            </Node>
+            <Node name="PrescriptionFiller.iOS" expanded="True">
+              <Node name="Properties" expanded="True" />
+              <Node name="Renderer" expanded="True" />
+              <Node name="Resources" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.PrescriptionFiller.Android AndroidDesignerPreferredTheme="MainTheme" TriggeredFromHotReload="False" PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller/ViewModel/HomeViewModel.cs" relfile="PrescriptionFiller/ViewModel/HomeViewModel.cs" line="152" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

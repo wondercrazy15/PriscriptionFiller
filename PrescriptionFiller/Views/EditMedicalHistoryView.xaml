@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PrescriptionFiller.Views.EditMedicalHistoryView"
+             BackgroundColor="White">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <ImageButton Source="back_arrow" HorizontalOptions="Start" FlowDirection="LeftToRight" IsEnabled="True" HeightRequest="40" Margin="0,0,0,0" Command="{Binding BackCommand}" BackgroundColor="Transparent"/>
+            <Label VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+                   Text="Edit Medical History"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="White" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Red"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackLayout Margin="10" Orientation="Vertical">
+                <Label Text="Shots/Vaccination" TextColor="Gray"/>
+                <Editor Placeholder="Enter something" Text="{Binding Shots}" HeightRequest="100" />
+                <Label Text="Medication" TextColor="Gray"/>
+                <Editor Placeholder="Enter something" Text="{Binding Medication}" HeightRequest="100"  />
+                <Label Text="Notes" TextColor="Gray"/>
+                <Editor Placeholder="Enter something" Text="{Binding Notes}" HeightRequest="100"/>
+                 <Button Text="Save" Command="{Binding SaveCommand}" Style="{StaticResource ButtonStyle}"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

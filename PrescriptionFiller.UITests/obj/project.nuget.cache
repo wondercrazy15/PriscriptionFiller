@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "G5B0aOjmJmH8Vvdmrz00VsjDf0kasT6RDhmwtQso6WmR5mGHJB9i0ukwiogan1kmORTjkFrnG+IzRyrTiHxbwQ==",
+  "success": true,
+  "projectFilePath": "/Volumes/Data/Projects/Live/Xamarin/Forms/Prescriptionfiller/20-12-21/PrescriptionFiller/PrescriptionFiller.UITests/PrescriptionFiller.UITests.csproj",
+  "expectedPackageFiles": [
+    "/Users/namac-mini-06/.nuget/packages/nunit/3.12.0/nunit.3.12.0.nupkg.sha512",
+    "/Users/namac-mini-06/.nuget/packages/rg.plugins.popup/2.0.0.14/rg.plugins.popup.2.0.0.14.nupkg.sha512",
+    "/Users/namac-mini-06/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/namac-mini-06/.nuget/packages/xam.plugin.media/5.0.1/xam.plugin.media.5.0.1.nupkg.sha512",
+    "/Users/namac-mini-06/.nuget/packages/xamarin.essentials/1.5.2/xamarin.essentials.1.5.2.nupkg.sha512",
+    "/Users/namac-mini-06/.nuget/packages/xamarin.forms/4.5.0.657/xamarin.forms.4.5.0.657.nupkg.sha512",
+    "/Users/namac-mini-06/.nuget/packages/xamarin.uitest/3.0.5/xamarin.uitest.3.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}

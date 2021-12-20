@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:customcontrols="clr-namespace:PrescriptionFiller.CustomControls"
+    x:Class="PrescriptionFiller.Views.AddNewPrescriptionView"
+    BackgroundColor="White">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Red"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                 <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <ImageButton Source="back_arrow" FlowDirection="LeftToRight" IsEnabled="True"
+                       HeightRequest="40" Margin="0,0,0,0" Command="{Binding BackCommand}" BackgroundColor="Transparent"
+                       />
+            <Label FlowDirection="MatchParent" VerticalOptions="Center" 
+                   Text="New Prescription"
+                   HorizontalOptions="Start"
+                   FontSize="20" Margin="0,0,40,0"
+                   FontAttributes="Bold"
+                   TextColor="White" />
+            <!--HorizontalOptions="CenterAndExpand"-->
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                         Padding="10,0,10,10" Spacing="0">
+                <!--Source="{Binding NewCapturedImageCommand}"-->
+                <Frame CornerRadius="20" HeightRequest="170" WidthRequest="170"
+                       Margin="0,10,0,10"
+                       Padding="0"
+                       BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Image Source="https://i.pinimg.com/originals/9c/b0/70/9cb070d62dc738a0c3a1a408d68e4af5.jpg"
+                       Margin="0"
+                       HeightRequest="170" WidthRequest="170" Aspect="Fill"
+                       BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Frame>
+                <Label Text="Medical Notes" FontAttributes="Bold" Padding="0" Margin="0"/>
+                <!--FontSize="15"--> 
+                <customcontrols:CustomEntry Text="{Binding medicalNotesTxt}" Placeholder="Enter Medical Notes" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0"/>
+                <BoxView x:Name="medicalNotes" BackgroundColor="Red" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,0,0,20"/>
+                <Label Text="Prescription Description" FontAttributes="Bold" Padding="0" Margin="0"/>
+                <customcontrols:CustomEntry Text="{Binding prescriptionDescriptionTxt}" Placeholder="Enter Prescription Description" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent"/>
+                <BoxView x:Name="prescriptionDescription" BackgroundColor="Red" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+
+                <!--<Label Text="Select Pharmacy" FontAttributes="Bold" Padding="0" Margin="0,10,0,0"/>-->
+
+                <!--<Frame Margin="0,10,0,0" BackgroundColor="Black" Padding="1">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SelectedPharmacyCommad}"/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="0" >
+                        <Label Text="{Binding selectedPharmacyInfo}" BackgroundColor="White" HorizontalOptions="FillAndExpand" Margin="0" Padding="2,0,0,0"/>
+                        <Frame Margin="0" Padding="0" BackgroundColor="White" HasShadow="False" CornerRadius="0">
+                            <Image Source="down_arrow_icon" HeightRequest="20"/>
+                        </Frame>
+                    </StackLayout>
+                </Frame>-->
+                
+
+                <!--<Picker HorizontalOptions="FillAndExpand"  Margin="0,5,0,0">
+                    <Picker.Items>
+                    </Picker.Items>
+                </Picker>-->
+                <!--<customcontrols:CustomPicker HorizontalOptions="FillAndExpand"
+                     HeightRequest="40" 
+                     Image="down_arrow_icon"
+                     Title="Select Pharmacy">
+                      <customcontrols:CustomPicker.Items>
+                    </customcontrols:CustomPicker.Items>
+            </customcontrols:CustomPicker>--> 
+                <Button Text="Next" Command="{Binding SendToPharmacyCommand}" x:Name="nextbutton" Style="{StaticResource ButtonStyle}"
+                        VerticalOptions="EndAndExpand"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

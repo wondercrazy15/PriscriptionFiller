@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.14" />
+    <PackageReference Include="Xamarin.Forms.InputKit" Version="3.7.2" />
+    <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="Model\" />
+    <Folder Include="ViewModel\" />
+    <Folder Include="CustomControls\" />
+    <Folder Include="Services\" />
+    <Folder Include="Global\" />
+    <Folder Include="Validations\" />
+    <Folder Include="Helper\" />
+    <Folder Include="interfaces\" />
+    <Folder Include="Views\PopUpView\" />
+    <Folder Include="LocalDatabase\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Xam.Plugin.Media" />
+    <None Remove="Helper\" />
+    <None Remove="interfaces\" />
+    <None Remove="System.Drawing.Common" />
+    <None Remove="Views\PopUpView\" />
+    <None Remove="Mono.Android" />
+    <None Remove="LocalDatabase\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Drawing.Common">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Library\Frameworks\Xamarin.iOS.framework\Versions\15.0.0.6\lib\mono\Xamarin.iOS\Facades\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Library\Frameworks\Xamarin.Android.framework\Versions\11.3.0.4\lib\xamarin.android\xbuild-frameworks\MonoAndroid\v9.0\Mono.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

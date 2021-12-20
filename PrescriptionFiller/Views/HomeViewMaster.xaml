@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PrescriptionFiller.Views.HomeViewMaster" Title="Master">
+    <StackLayout>
+        <ListView x:Name="MenuItemsListView" SeparatorVisibility="None" HasUnevenRows="true" BackgroundColor="Red" Opacity="0.8" ItemsSource="{Binding MenuItems}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Spacing="15" Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <Image Source="{Binding image}" HeightRequest="35" WidthRequest="35"/>
+                            <Label VerticalOptions="FillAndExpand" TextColor="White" VerticalTextAlignment="Center" Text="{Binding Title}" FontSize="Medium" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

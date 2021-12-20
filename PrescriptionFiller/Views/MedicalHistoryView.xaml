@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="White"
+             x:Class="PrescriptionFiller.Views.MedicalHistoryView">
+    <!--
+    Title="Medical History"
+BackgroundColor="Transparent"-->
+    <NavigationPage.TitleView>
+         <StackLayout Orientation="Horizontal"><Label VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+                   Text="Medical History"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="White" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackLayout Margin="10" Orientation="Vertical" Spacing="10">
+                <Label Text="Shots/Vaccination" TextColor="Gray"/>
+                <Label Text="{Binding Shots}" TextColor="Black"/>
+                <!--<Editor Placeholder="Enter something" HeightRequest="100" />-->
+                 <Label Text="Medication" TextColor="Gray"/>
+                <Label Text="{Binding Medication}" TextColor="Black"/>
+                <!--<Editor Placeholder="Enter something"  HeightRequest="100"  />-->
+                 <Label Text="Notes" TextColor="Gray"/>
+                 <Label Text="{Binding Notes}" TextColor="Black"/>
+                <!--<Editor Placeholder="Enter something" HeightRequest="100"/>-->
+            </StackLayout>
+            <ImageButton Grid.Row="0"
+                         Command="{Binding EditAccountInfoCommand}"
+                         Source="pfa_icon_edit_small.png"
+                         BorderColor="White"
+                         BorderWidth="1"
+                         BackgroundColor="Red"
+                         CornerRadius="40"
+                         HorizontalOptions="End"
+                         WidthRequest="80"
+                         HeightRequest="80"
+                         Margin="0,0,20,22"
+                         Padding="15"
+                         VerticalOptions="End"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

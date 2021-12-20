@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PrescriptionFiller.Views.HomeViewDetail"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            BarBackgroundColor="#FF0000"
+            BarTextColor="White"
+            android:TabbedPage.BarItemColor="#66FFFFFF"
+            android:TabbedPage.BarSelectedItemColor="White"
+             Title="Prescription">
+    <ContentPage Title="New" BackgroundColor="AliceBlue" IconImageSource="new_icon.png" >
+        <StackLayout Margin="10,0">
+            <CollectionView SelectionMode="None"
+                            ItemsSource="{Binding GetHomeModels}"
+                            Margin="0,10">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout  HorizontalItemSpacing="10"
+                                      VerticalItemSpacing="15"
+                                      Span="2"
+                                      Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Vertical">
+                            <Frame Padding="0" BackgroundColor="Red"
+                                   CornerRadius="5">
+                                <Image Source="logowithtext" Aspect="AspectFill"/>
+                            </Frame>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Text="Pharmacy :" FontSize="Small"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Pharmacy}" FontSize="Small" MaxLines="1" LineBreakMode="TailTruncation"/>
+                                <Label Grid.Row="1" Grid.Column="0" Text="Physician :" FontSize="Small"/>
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Physician}" FontSize="Small" MaxLines="1" LineBreakMode="TailTruncation"/>
+                            </Grid>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Sent" BackgroundColor="AntiqueWhite" IconImageSource="sent_icon.png">
+
+    </ContentPage>
+</TabbedPage>

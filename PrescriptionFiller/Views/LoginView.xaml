@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customcontrols="clr-namespace:PrescriptionFiller.CustomControls"
+             x:Class="PrescriptionFiller.Views.LoginView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Red"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                 <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="20,0,20,0" RowSpacing="15" VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" HeightRequest="150" WidthRequest="150" Source="logowithtext"/>
+                <StackLayout Grid.Row="1" Margin="0,10,0,0">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="pfa_icon_letter" HeightRequest="25" WidthRequest="25" BackgroundColor="Transparent"/>
+                        <customcontrols:CustomEntry Text="{Binding Email}" TextChanged="EmailEntry_TextChanged" Placeholder="Enter Email" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent"/>
+                    </StackLayout>
+                    <StackLayout Margin="0,5,0,0">
+                        <BoxView x:Name="EmailBottomLine" BackgroundColor="Red" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Grid.Row="2" Margin="0,10,0,0">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="pfa_icon_lock" HeightRequest="25" WidthRequest="25" BackgroundColor="Transparent"/>
+                        <customcontrols:CustomEntry Text="{Binding Password}" TextChanged="PasswordEntry_TextChanged" IsPassword="True" Placeholder="Enter Password" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent"/>
+                    </StackLayout>
+                    <StackLayout Margin="0,5,0,0">
+                        <BoxView x:Name="PasswordBottomLine" BackgroundColor="Red" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                </StackLayout>
+                <Button Grid.Row="3" Text="Forgot Password?" BackgroundColor="Transparent" HorizontalOptions="End"/>
+                <Button Grid.Row="4" Text="Sign In" Command="{Binding SignInCommand}" x:Name="SignInButton" Style="{StaticResource ButtonStyle}"/>
+                <Button Grid.Row="5" Text="Sign Up" Command="{Binding SignUpCommand}" Style="{StaticResource ButtonStyle}"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

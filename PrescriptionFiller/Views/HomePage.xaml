@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PrescriptionFiller.Views.HomePage"
+    NavigationPage.HasNavigationBar="True"
+    BackgroundColor="White">
+    <NavigationPage.TitleView>
+         <StackLayout Orientation="Horizontal"><Label VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+                   Text="Prescription"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="White" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+     <!--Title="Prescription"-->
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+            <Grid HorizontalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0" VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Tab button design-->
+                <StackLayout Spacing="0" Grid.Row="0" HeightRequest="40" Grid.Column="0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Button  x:Name="buttonNew"
+                             Command="{Binding buttonNew}"
+                             Text="New"
+                             HeightRequest="30"
+                             Clicked="buttonNew_Clicked"
+                             TextColor="{Binding newButtonLableColor}"
+                             CornerRadius="0"
+                            BackgroundColor="Red"
+                            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    <BoxView  Margin="0" x:Name="newBoder" HeightRequest="{Binding newBoxViewHeight}"
+                              BackgroundColor="#FFC65B" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Spacing="0" Grid.Row="0" Grid.Column="1" Orientation="Vertical"
+                              HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Button  x:Name="buttonSent"
+                             Clicked="buttonSent_Clicked"
+                             Command="{Binding buttonSent}" Text="Sent"
+                             TextColor="{Binding sentButtonLableColor}" CornerRadius="0" HeightRequest="30" BackgroundColor="Red"
+                             HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    <BoxView Margin="0"
+                             x:Name="sentBoder"
+                             HeightRequest="{Binding sentBoxViewHeight}"
+                             BackgroundColor="#FFC65B"
+                             HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <!--- design for sent view-->
+                <StackLayout x:Name="sentView1" Grid.Row="1"
+                              Grid.ColumnSpan="2"
+                              Grid.Column="0"
+                              BackgroundColor="White"
+                              Orientation="Vertical"
+                              HorizontalOptions="FillAndExpand"
+                              VerticalOptions="FillAndExpand">
+                      <CollectionView HorizontalOptions="FillAndExpand"
+                                      VerticalOptions="FillAndExpand"
+                                      BackgroundColor="White"
+                                      x:Name="sentCollectionView"
+                                      ItemsSource="{Binding GetHomeModels}"
+                                      SelectedItem="{Binding SelectedSentInfoCommand}"
+                                      Margin="5,0,5,5"
+                                      SelectionMode="Single"
+                                      SelectionChangedCommand="{Binding SentInfoCommand}">
+                        <!--SelectedItem="{Binding SelectedUser}"-->
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Span="2" Orientation="Vertical" HorizontalItemSpacing="5" VerticalItemSpacing="10" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame CornerRadius="10" Padding="0,0,0,0" BackgroundColor="#E1E1E1" Margin="0">
+                                    <!--<Frame.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
+                                    </Frame.GestureRecognizers>-->
+                                    <StackLayout Orientation="Vertical" Padding="0,0,0,0" Spacing="0" VerticalOptions="StartAndExpand">
+                                        <!--<Image HeightRequest="180" Source="default_image" Aspect="Fill" Margin="2"/>-->
+                                        <Image HeightRequest="180" Source="{Binding GetImage}" Aspect="Fill" Margin="2"/>
+                                        <StackLayout Orientation="Horizontal" BackgroundColor="#E1E1E1" Padding="0,0,0,0">
+                                            <StackLayout Orientation="Vertical" Margin="5,0,0,7" Spacing="0" VerticalOptions="Center">
+                                                <StackLayout Orientation="Horizontal" Spacing="0" Margin="0" Padding="0" VerticalOptions="Center" BackgroundColor="Transparent">
+                                                    <Label Text="Pharmacy: "
+                                                           VerticalOptions="Center"
+                                                           FontSize="12"
+                                                           LineBreakMode="TailTruncation"/>
+                                                    <Label Text="{Binding Pharmacy}"
+                                                           VerticalOptions="Center"
+                                                           FontAttributes="Bold"
+                                                           FontSize="12"
+                                                           LineBreakMode="TailTruncation"/>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal" Spacing="0" Margin="0" Padding="0" VerticalOptions="Center" BackgroundColor="Transparent">
+                                                    <Label Text="Physician: "
+                                                           VerticalOptions="Center"
+                                                           FontSize="12"
+                                                           LineBreakMode="TailTruncation"/>
+                                                    <Label Text="{Binding Physician}"
+                                                           VerticalOptions="Center"
+                                                           FontAttributes="Bold"
+                                                           FontSize="12"
+                                                           LineBreakMode="TailTruncation"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+
+                <!-- new capture image design-->
+                <StackLayout x:Name="newView1" Grid.Row="1"
+                             Grid.ColumnSpan="2"
+                             Grid.Column="0"
+                             BackgroundColor="Transparent"
+                             Orientation="Vertical"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand">
+                    <CollectionView HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    BackgroundColor="White"
+                                    x:Name="newCollectionView"
+                                    ItemsSource="{Binding GetNewCameraImage}"
+                                    SelectedItem="{Binding SelectedNewInfoCommand}"
+                                    Margin="5,0,5,5"
+                                    SelectionMode="Single"
+                                    SelectionChangedCommand="{Binding NewInfoCommand}">
+                        <!--SelectedItem="{Binding SelectedUser}"-->
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Span="2" Orientation="Vertical" HorizontalItemSpacing="5" VerticalItemSpacing="10" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame CornerRadius="10" Padding="0,0,0,0" BackgroundColor="#E1E1E1">
+                                    <StackLayout Orientation="Vertical" Padding="0,0,0,0" Spacing="0" VerticalOptions="StartAndExpand">
+                                        <Image HeightRequest="180" Source="{Binding getCameraImage}" Aspect="Fill" Margin="2"/>
+                                        <!--<Image HeightRequest="180" Source="default_image" Aspect="Fill" Margin="2"/>-->
+                                        <!--<StackLayout Orientation="Horizontal" BackgroundColor="#E1E1E1" Padding="0,0,0,0">
+                                            <StackLayout Orientation="Vertical" Margin="5,0,0,7" Spacing="0">
+                                                <Label Text="New Image"
+                                                           VerticalOptions="Start"
+                                                           FontAttributes="Bold"
+                                                           LineBreakMode="TailTruncation"/>
+                                            </StackLayout>
+                                        </StackLayout>-->
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+
+                
+                <ImageButton Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                             Command="{Binding buttonTakePhoto}"
+                             Source="addcamera_icon.png"
+                             BorderColor="Red" BorderWidth="1"
+                             BackgroundColor="Red" CornerRadius="40"
+                             HorizontalOptions="End" WidthRequest="80"
+                             HeightRequest="80" Margin="0,0,20,22"
+                             Padding="15" VerticalOptions="End"/>
+               
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

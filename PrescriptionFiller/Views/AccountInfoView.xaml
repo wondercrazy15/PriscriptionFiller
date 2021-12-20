@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PrescriptionFiller.Views.AccountInfoView"
+    BackgroundColor="White">
+      <NavigationPage.TitleView>
+        <Label  Text="Account Info"  TextColor="White" FontAttributes="Bold" FontSize="20" VerticalOptions="Center"/>
+          <!--HorizontalOptions="CenterAndExpand"-->
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <ScrollView>
+                <StackLayout  Margin="20" Orientation="Vertical" BackgroundColor="White" >
+                    <Grid ColumnSpacing="0" RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" Text="First Name" FontSize="Medium" FontAttributes="None" TextColor="Silver"  />
+                        <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" Text="Last Name" FontSize="Medium" FontAttributes="None" TextColor="Silver"  />
+                        <Label Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" Text="{Binding firstName}" FontSize="Medium" FontAttributes="None" TextColor="Black"  />
+                        <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" Text="{Binding lastName}" FontSize="Medium" FontAttributes="None" TextColor="Black"  />
+                        <Label Margin="0,7,0,0" Grid.Row="2" Grid.Column="0" Text="Date Of Birth"  FontSize="Medium" FontAttributes="Italic" TextColor="Silver"/>
+                        <Label Margin="0,7,0,0" Grid.Row="2" Grid.Column="1" Text="Gender" FontSize="Medium" FontAttributes="Italic" TextColor="Silver"  />
+                        <Label Grid.Row="3" Grid.Column="0" Text="{Binding dob}" FontSize="Medium" TextColor="Black" />
+                        <Label Grid.Row="3" Grid.Column="1" Text="{Binding gender}" FontSize="Medium" TextColor="Black"  />
+                        <Label Margin="0,7,0,0" Grid.Row="4" Grid.Column="0" Text="Phone" FontSize="Medium" FontAttributes="Italic" TextColor="Silver"  />
+                        <Label Grid.Row="5" Grid.Column="0" Text="{Binding phone}" FontSize="Medium" TextColor="Black" />
+                    </Grid>
+                    <Grid Margin="0,0,0,0" ColumnSpacing="0" RowSpacing="0">
+                        <Grid.RowDefinitions>
+                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Text="Email" FontSize="Medium" FontAttributes="None" TextColor="Silver"  />
+                            <Label Grid.Row="1" HorizontalOptions="FillAndExpand" Text="{Binding emailAdress}" FontSize="Medium" TextColor="Black"/>
+                            <Label Margin="0,7,0,0" Grid.Row="2" Text="Allergies/Reactions" FontSize="Medium" FontAttributes="None" TextColor="Silver"/>
+                            <Label
+                                Grid.Row="3"
+                                x:Name="allergies"
+                                TextColor="Black"
+                                Text="{Binding allerigies}"
+                                FontSize="Medium"/>
+                            <Label Margin="0,7,0,0" Grid.Row="4" Text="Medical Insurance Provider" FontSize="Medium" FontAttributes="None" TextColor="Silver"/>
+                            <Label
+                                Grid.Row="5"
+                                x:Name="medicalInsuranceProvider"
+                                TextColor="Black"
+                                Text="{Binding medicalInsuranceProvider}"
+                                FontSize="Medium"/>
+                            <Label Margin="0,7,0,0" Grid.Row="6" Text="Carrier" FontSize="Medium" FontAttributes="None" TextColor="Silver"/>
+                            <Label
+                                Grid.Row="7"
+                                x:Name="carrierNumber"
+                                TextColor="Black"
+                                Text="{Binding carrier}"
+                                FontSize="Medium"/>
+                            <Label Margin="0,7,0,0" Grid.Row="8" Text="Plan" FontSize="Medium" FontAttributes="None" TextColor="Silver"/>
+                            <Label
+                                Grid.Row="9"
+                                x:Name="planNumber"
+                                TextColor="Black"
+                                Text="{Binding plan}"
+                                FontSize="Medium"/>
+                            <Label Margin="0,7,0,0" Grid.Row="10" Text="Member ID" FontSize="Medium" FontAttributes="None" TextColor="Silver"/>
+                            <Label
+                                Grid.Row="11"
+                                x:Name="memberId"
+                                TextColor="Black"
+                                Text="{Binding memberId}"
+                                FontSize="Medium"/>
+                            <Label Margin="0,7,0,0" Grid.Row="12" Text="Issue" FontSize="Medium" FontAttributes="None" TextColor="Silver"/>
+                            <Label
+                                Grid.Row="13"
+                                x:Name="issueNumber"
+                                TextColor="Black"
+                                Text="{Binding issue}"
+                                FontSize="Medium"/>
+                            <Label Margin="0,7,0,0" Grid.Row="14" Text="Personal Health Number" FontSize="Medium" FontAttributes="None" TextColor="Silver"/>
+                            <Label
+                                Grid.Row="15"
+                                x:Name="personalHealthNumber"
+                                TextColor="Black"
+                                Text="{Binding personalHeathNumber}"
+                                FontSize="Medium"/>
+                    </Grid>
+                </StackLayout>
+        </ScrollView>
+            <ImageButton Grid.Row="0"
+                         Command="{Binding EditAccountInfoCommand}"
+                         Source="pfa_icon_edit_small.png"
+                         BorderColor="White"
+                         BorderWidth="1"
+                         BackgroundColor="Red"
+                         CornerRadius="40"
+                         HorizontalOptions="End"
+                         WidthRequest="70"
+                         HeightRequest="70"
+                         Margin="0,0,20,22"
+                         Padding="15"
+                         VerticalOptions="End"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
