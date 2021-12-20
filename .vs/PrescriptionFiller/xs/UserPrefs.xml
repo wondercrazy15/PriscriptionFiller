@@ -1,6 +1,6 @@
-﻿<Properties StartupConfiguration="{AAE637FF-DB38-42FF-B16A-07A1055114F1}|Default">
-  <MonoDevelop.Ide.ItemProperties.PrescriptionFiller.iOS TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C715727C-DB60-420D-97FC-470E32B4C48A" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PrescriptionFiller/ViewModel/LoginViewModel.cs">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{AAE637FF-DB38-42FF-B16A-07A1055114F1}|Default">
+  <MonoDevelop.Ide.ItemProperties.PrescriptionFiller.iOS TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.7DC1F307-0712-4D15-9ECA-F653044F9D21" />
+  <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="PrescriptionFiller/Views/EditAccountInfoView.xaml" Line="14" Column="27" />
       <File FileName="PrescriptionFiller/Validations/Validation.cs" />
@@ -27,11 +27,9 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="PrescriptionFiller" expanded="True">
+          <Node name="PrescriptionFiller" expanded="True" selected="True">
             <Node name="PrescriptionFiller" expanded="True">
-              <Node name="ViewModel" expanded="True">
-                <Node name="LoginViewModel.cs" selected="True" />
-              </Node>
+              <Node name="ViewModel" expanded="True" />
               <Node name="Views" expanded="True" />
             </Node>
             <Node name="PrescriptionFiller.iOS" expanded="True">
