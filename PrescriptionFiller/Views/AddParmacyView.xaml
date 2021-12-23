@@ -1,22 +1,23 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:customcontrols="clr-namespace:PrescriptionFiller.CustomControls"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customcontrols="clr-namespace:PrescriptionFiller.CustomControls"
     x:Class="PrescriptionFiller.Views.AddParmacyView"
     BackgroundColor="White">
-     <ContentPage.Resources>
+    <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="ButtonStyle" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="Red"/>
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="CornerRadius" Value="10"/>
-                 <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontSize" Value="Medium"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-      <NavigationPage.TitleView>
+    <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
             <ImageButton Source="back_arrow" FlowDirection="LeftToRight" IsEnabled="True"
                        HeightRequest="40" Margin="0,0,0,0" Command="{Binding BackCommand}" BackgroundColor="Transparent"
@@ -30,31 +31,93 @@
             <!--HorizontalOptions="CenterAndExpand"-->
         </StackLayout>
     </NavigationPage.TitleView>
-    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10,5,10,10" Spacing="0">
+    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10,5,10,10">
+        <StackLayout.Spacing>
+            <OnPlatform x:TypeArguments="x:Double" iOS="10" Android="0"/>
+        </StackLayout.Spacing>
         <Label Text="Search By City" FontAttributes="Bold" Padding="0" Margin="0"/>
-        <customcontrols:CustomEntry Text="{Binding cityTxt}" Placeholder="Enter City Name" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0"/>
-        <BoxView x:Name="city" BackgroundColor="Red" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,0,0,20"/>
+        <customcontrols:CustomEntry Text="{Binding city}" Placeholder="Enter City Name" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0"/>
+        <BoxView x:Name="city" BackgroundColor="Red" HeightRequest="1" HorizontalOptions="FillAndExpand" />
         <Label Text="OR" FontAttributes="Bold" Padding="0" Margin="0" HorizontalOptions="Center" TextColor="Red"/>
         <Label Text="Search By Pharmacy Name" FontAttributes="Bold" Padding="0" Margin="0"/>
-        <customcontrols:CustomEntry Text="{Binding pharmacyNameTxt}" Placeholder="Enter Pharmacy Name" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0"/>
+        <customcontrols:CustomEntry Text="{Binding pharmacyName}" Placeholder="Enter Pharmacy Name" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0"/>
         <BoxView x:Name="pharmacyName" BackgroundColor="Red" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,0,0,20"/>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="5" Margin="0" Padding="0">
-             <!--BackgroundColor="Orange"-->
-            <Button Text="Search" Command="{Binding SendToPharmacyCommand}" x:Name="SignInButton" Style="{StaticResource ButtonStyle}"
+        <Grid VerticalOptions="StartAndExpand" HeightRequest="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Text="Search" Command="{Binding SearchCommand}" Grid.Column="0" x:Name="SignInButton" Style="{StaticResource ButtonStyle}"
                         VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"/>
-            <Button Text="Use Location" Command="{Binding SendToPharmacyCommand}" x:Name="locationButton" Style="{StaticResource ButtonStyle}"
+            <Button Text="Use Location" Grid.Column="1" Command="{Binding LocationCommand}" x:Name="locationButton" Style="{StaticResource ButtonStyle}"
                             VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"/>
-        </StackLayout>
-        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+        </Grid>
+        <!--<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="5" Margin="0" Padding="0">
+            BackgroundColor="Orange"
+            <Button Text="Search" Command="{Binding SearchCommand}" x:Name="SignInButton" Style="{StaticResource ButtonStyle}"
+                        VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"/>
+            <Button Text="Use Location" Command="{Binding LocationCommand}" x:Name="locationButton" Style="{StaticResource ButtonStyle}"
+                            VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>-->
+        <StackLayout Margin="0,10,0,0" Orientation="Vertical" VerticalOptions="FillAndExpand">
             <ScrollView HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand">
-                <!--BackgroundColor="Red"-->
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                     <!--BackgroundColor="Yellow"-->
-                    
+                    <CollectionView HorizontalOptions="FillAndExpand" 
+                                      ItemsSource="{Binding GetPharmecyModels}"
+                                      VerticalOptions="FillAndExpand"
+                                      BackgroundColor="Transparent"
+                                      Margin="5,0,5,5"
+                                      SelectionMode="Single"
+                                      SelectionChangedCommand="{Binding SelectedItemCommand}"
+                                      SelectedItem="{Binding SelectedItemInfoCommand}">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Span="1" Orientation="Vertical" HorizontalItemSpacing="0" VerticalItemSpacing="10" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="0,0,0,0" HasShadow="False">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup  Name="CommonStates">
+                                            <VisualState Name="Normal">
+                                                <VisualState.Setters>
+                                                    <Setter Property="BackgroundColor" Value="Transparent"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter Property="BackgroundColor" Value="Red" />
+                                                    <Setter TargetName="NameLabel" Property="Label.TextColor" Value="White"/>
+                                                    <Setter TargetName="NameValueLabel" Property="Label.TextColor" Value="White"/>
+                                                    <Setter TargetName="AddressLabel" Property="Label.TextColor" Value="White"/>
+                                                    <Setter TargetName="AddressValueLabel" Property="Label.TextColor" Value="White"/>
+                                                    <Setter TargetName="FaxLabel" Property="Label.TextColor" Value="White"/>
+                                                    <Setter TargetName="FaxValueLabel" Property="Label.TextColor" Value="White"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <StackLayout Orientation="Vertical" Padding="5,0,0,0" Spacing="2" VerticalOptions="StartAndExpand">
+                                        <StackLayout Orientation="Horizontal" Padding="0,0,0,0">
+                                            <Label FontSize="Medium" Text="Name:" TextColor="Black" x:Name="NameLabel" />
+                                            <Label Text="{Binding name}" x:Name="NameValueLabel"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" Padding="0,0,0,0">
+                                            <Label FontSize="Medium" Text="Address:" TextColor="Black" x:Name="AddressLabel"/>
+                                            <Label Text="{Binding address}" x:Name="AddressValueLabel"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" Padding="0,0,0,0">
+                                            <Label FontSize="Medium" Text="Fax:" TextColor="Black" x:Name="FaxLabel" />
+                                            <Label Text="{Binding fax_number}" x:Name="FaxValueLabel"/>
+                                        </StackLayout>
+                                        <BoxView HeightRequest="1" BackgroundColor="Gray" Margin="0,5,0,0"/>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
                 </StackLayout>
             </ScrollView>
         </StackLayout>
-        
 
         <Button Text="Send To Pharmacy" Command="{Binding SendToPharmacyCommand}" x:Name="SignInButton1" Style="{StaticResource ButtonStyle}"
                         VerticalOptions="EndAndExpand"/>

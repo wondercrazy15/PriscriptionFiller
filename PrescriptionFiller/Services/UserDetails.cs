@@ -71,7 +71,7 @@ namespace PrescriptionFiller.Services
         {
             try
             {
-                string url = Constants.baseUrl + "public/api/user/";
+                string url = Constants.baseUrl + "user";
                 HttpClient client = new HttpClient();
 
                 var content = new FormUrlEncodedContent(new[]
@@ -79,7 +79,7 @@ namespace PrescriptionFiller.Services
                     new KeyValuePair<string, string>("email", email),
                     new KeyValuePair<string, string>("password", password),
                     new KeyValuePair<string, string>("date_of_birth", DateOfBirth),
-                    new KeyValuePair<string, string>("sex", sex),
+                    new KeyValuePair<string, string>("sex", sex=="Male"?sex="M":sex="F"),
                     new KeyValuePair<string, string>("first_name", firstName),
                     new KeyValuePair<string, string>("last_name", lastName),
                     new KeyValuePair<string, string>("phone_number", phoneNumber),
@@ -143,6 +143,130 @@ namespace PrescriptionFiller.Services
             }
             return null;
         }
+
+        public async Task<PharmecyModel> GetPharmacyList(string city, string pharmacyName)
+        {
+            //"public/api/pharmacy/name/" + ((pharmacyName != null && !pharmacyName.Equals("")) ? pharmacyName : "null") + "/city/" + ((city != null && !city.Equals("")) ? city : "null")
+            try
+            {
+                string url = Constants.baseUrl + "public/api/pharmacy/name/" + ((pharmacyName != null && !pharmacyName.Equals("")) ? pharmacyName : "null") + "/city/" + ((city != null && !city.Equals("")) ? city : "null");
+                HttpClient client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Constants.token_type, Constants.access_token);
+                HttpResponseMessage response = await client.GetAsync(url);
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    var result = await response.Content.ReadAsStringAsync();
+                    var userInfoResponse = JsonConvert.DeserializeObject<PharmecyModel>(result);
+                    return userInfoResponse;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return null;
+        }
+
+        public async Task<PharmacySubmittedResponse> GetPharmacySubmittedResponse(PrescriptionItem _selectedNewPrescriptionInfo, string pharmacyID, string medicalNote, string prescriptionDescriptions)
+        {
+            #region MyRegion
+            //try
+            //{
+            //    string url = "https://api.prescriptionfiller.com/api/prescription/";
+            //    //string url = Constants.baseUrl + "api/prescription/";
+            //    HttpClient client = new HttpClient();
+            //    byte[] imageArray = System.IO.File.ReadAllBytes(_selectedNewPrescriptionInfo.thumbPath);
+            //    var base64ImageRepresentation = Convert.ToBase64String(imageArray);
+
+            //    #region
+            //    SendPharmacyInfo content = new SendPharmacyInfo();
+            //    content.user_id = "201";
+            //    content.pharmacy_id = "17316";
+            //    content.description = "";
+            //    content.extended_health = "";
+            //    content.fax_id = "";
+            //    content.medical_notes = "";
+            //    content.image_binary = "";// "data:image/png;base64," + base64ImageRepresentation;
+            //    #endregion
+
+            //    //SendPharmacyInfo content = new SendPharmacyInfo();
+            //    //content.user_id = Constants.user_id.ToString();
+            //    //content.pharmacy_id = pharmacyID;
+            //    //content.description = prescriptionDescriptions;
+            //    //content.extended_health = "";
+            //    //content.fax_id = _selectedNewPrescriptionInfo.pharmacyFaxNumber;
+            //    //content.medical_notes = medicalNote;
+            //    //content.image_binary = base64ImageRepresentation; //"data:image/png;base64," +
+
+            //    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Constants.token_type, Constants.access_token);
+            //    var jasondata = JsonConvert.SerializeObject(content);
+            //    var jsondatarray = System.Text.Encoding.ASCII.GetBytes(jasondata);
+            //    //var jsonrequest = new StringContent(jasondata);
+            //    var jsonrequest = new ByteArrayContent(jsondatarray);
+            //    HttpResponseMessage response = await client.PostAsync(url, jsonrequest);
+
+            //    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            //    {
+            //        var result = await response.Content.ReadAsStringAsync();
+            //        var signupresponse = JsonConvert.DeserializeObject<PharmacySubmittedResponse>(result);
+            //        return signupresponse;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+
+            //}
+            #endregion
+            try
+            {
+                string url = "https://api.prescriptionfiller.com/api/prescription/";
+                HttpClient client = new HttpClient();
+                byte[] imageArray = System.IO.File.ReadAllBytes(_selectedNewPrescriptionInfo.thumbPath);
+                var base64ImageRepresentation = Convert.ToBase64String(imageArray);              
+
+                SendPharmacyInfo content = new SendPharmacyInfo();
+                content.user_id = Constants.user_id.ToString();
+                content.pharmacy_id = pharmacyID;
+                content.description = prescriptionDescriptions;
+                content.extended_health = "";
+                content.fax_id = _selectedNewPrescriptionInfo.pharmacyFaxNumber;
+                content.medical_notes = medicalNote;
+                content.image_binary = base64ImageRepresentation;
+
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Constants.token_type, Constants.access_token);
+                var jasondata = JsonConvert.SerializeObject(content);
+                //var d = System.Text.Encoding.ASCII.GetBytes(jasondata);
+                var jsonrequest = new StringContent(jasondata, System.Text.Encoding.UTF8, "application/json");
+
+                //var jsonrequest = new ByteArrayContent(d);
+                //HttpResponseMessage hrm = await _client.PostAsync(url, new StringContent(content, System.Text.Encoding.UTF8, "application/json");
+                //HttpResponseMessage response = await client.PostAsync(url, content);
+
+                HttpResponseMessage response = await client.PostAsync(url, jsonrequest);               
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    var result = await response.Content.ReadAsStringAsync();
+                    var signupresponse = JsonConvert.DeserializeObject<PharmacySubmittedResponse>(result);
+                    return signupresponse;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return null;          
+        }
     }
 
+}
+
+public class SendPharmacyInfo
+{
+    public string user_id { get; set; }
+    public string pharmacy_id { get; set; }
+    public string description { get; set; }
+    public string extended_health { get; set; }
+    public string fax_id { get; set; }
+    public string medical_notes { get; set; }
+    public string image_binary { get; set; }
 }

@@ -10,23 +10,68 @@ namespace PrescriptionFiller.ViewModel
     public class AddNewPrescriptionViewModel : BaseViewModel
     {
         INavigation _navigation;
-        CameraModel _selectedNewPrescriptionInfo = new CameraModel();
+        PrescriptionItem _selectedNewPrescriptionInfo = new PrescriptionItem();
 
         public ICommand BackCommand { get; }
         public ICommand SendToPharmacyCommand { get; }
 
-        public AddNewPrescriptionViewModel(INavigation navigation,CameraModel SelctedNewPrescriptionInfo)
+        private string _NewCapturedImageSource;
+        public string NewCapturedImageSource
+        {
+            get
+            {
+                return _NewCapturedImageSource;
+            }
+            set
+            {
+                _NewCapturedImageSource = value;
+                OnPropertyChanged("NewCapturedImageSource");
+            }
+        }
+
+        private string _medicalNotesTxt;
+        public string medicalNotesTxt
+        {
+            get
+            {
+                return _medicalNotesTxt;
+            }
+            set
+            {
+                _medicalNotesTxt = value;
+                OnPropertyChanged("medicalNotesTxt");
+            }
+        }
+
+        private string _prescriptionDescriptionTxt;
+        public string prescriptionDescriptionTxt
+        {
+            get
+            {
+                return _prescriptionDescriptionTxt;
+            }
+            set
+            {
+                _prescriptionDescriptionTxt = value;
+                OnPropertyChanged("prescriptionDescriptionTxt");
+            }
+        }
+
+        //NewCapturedImageSource
+
+        public AddNewPrescriptionViewModel(INavigation navigation, PrescriptionItem SelctedNewPrescriptionInfo)
         {
             _navigation = navigation;
             _selectedNewPrescriptionInfo = SelctedNewPrescriptionInfo;
-
+            NewCapturedImageSource = _selectedNewPrescriptionInfo.thumbPath;
             BackCommand = new Command(BackCommandAsync);
             SendToPharmacyCommand = new Command(SendToPharmacyClick);
         }
 
         private void SendToPharmacyClick(object obj)
         {
-            _navigation.PushModalAsync(new NavigationPage(new AddParmacyView()));
+            //_selectedNewPrescriptionInfo.med
+            _navigation.PushModalAsync(new NavigationPage(new AddParmacyView(_selectedNewPrescriptionInfo, medicalNotesTxt, prescriptionDescriptionTxt)));
         }
 
         private void BackCommandAsync(object obj)

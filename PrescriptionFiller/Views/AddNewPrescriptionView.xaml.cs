@@ -9,7 +9,7 @@ namespace PrescriptionFiller.Views
     public partial class AddNewPrescriptionView : ContentPage
     {
 
-        public AddNewPrescriptionView(CameraModel SelctedNewPrescriptionInfo)
+        public AddNewPrescriptionView(PrescriptionItem SelctedNewPrescriptionInfo)
         {
             InitializeComponent();
             BindingContext = new AddNewPrescriptionViewModel(Navigation, SelctedNewPrescriptionInfo);

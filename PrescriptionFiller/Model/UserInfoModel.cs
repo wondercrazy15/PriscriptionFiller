@@ -23,8 +23,8 @@ namespace PrescriptionFiller.Model
         public string shots { get; set; }
         public string drugs { get; set; }
         public string vaccinations { get; set; }
-        public int user_type { get; set; }
-        public int activated { get; set; }
+        public string user_type { get; set; }
+        public string activated { get; set; }
         public string address { get; set; }
         public string city { get; set; }
         public string province { get; set; }

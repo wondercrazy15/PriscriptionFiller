@@ -15,7 +15,13 @@
             </Grid.RowDefinitions>
             <ScrollView>
                 <StackLayout  Margin="20" Orientation="Vertical" BackgroundColor="White" >
-                    <Grid ColumnSpacing="0" RowSpacing="0">
+                    <StackLayout.Spacing>
+                    <OnPlatform x:TypeArguments="x:Double" iOS="10" Android="0"/>
+                </StackLayout.Spacing>
+                    <Grid ColumnSpacing="0">
+                        <Grid.RowSpacing>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="10" Android="0"/>
+                        </Grid.RowSpacing>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
@@ -33,14 +39,17 @@
                         <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" Text="Last Name" FontSize="Medium" FontAttributes="None" TextColor="Silver"  />
                         <Label Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" Text="{Binding firstName}" FontSize="Medium" FontAttributes="None" TextColor="Black"  />
                         <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" Text="{Binding lastName}" FontSize="Medium" FontAttributes="None" TextColor="Black"  />
-                        <Label Margin="0,7,0,0" Grid.Row="2" Grid.Column="0" Text="Date Of Birth"  FontSize="Medium" FontAttributes="Italic" TextColor="Silver"/>
-                        <Label Margin="0,7,0,0" Grid.Row="2" Grid.Column="1" Text="Gender" FontSize="Medium" FontAttributes="Italic" TextColor="Silver"  />
+                        <Label Margin="0,7,0,0" Grid.Row="2" Grid.Column="0" Text="Date Of Birth"  FontSize="Medium"  TextColor="Silver"/>
+                        <Label Margin="0,7,0,0" Grid.Row="2" Grid.Column="1" Text="Gender" FontSize="Medium"  TextColor="Silver"  />
                         <Label Grid.Row="3" Grid.Column="0" Text="{Binding dob}" FontSize="Medium" TextColor="Black" />
                         <Label Grid.Row="3" Grid.Column="1" Text="{Binding gender}" FontSize="Medium" TextColor="Black"  />
-                        <Label Margin="0,7,0,0" Grid.Row="4" Grid.Column="0" Text="Phone" FontSize="Medium" FontAttributes="Italic" TextColor="Silver"  />
+                        <Label Margin="0,7,0,0" Grid.Row="4" Grid.Column="0" Text="Phone" FontSize="Medium"  TextColor="Silver"  />
                         <Label Grid.Row="5" Grid.Column="0" Text="{Binding phone}" FontSize="Medium" TextColor="Black" />
                     </Grid>
-                    <Grid Margin="0,0,0,0" ColumnSpacing="0" RowSpacing="0">
+                    <Grid Margin="0,0,0,0" ColumnSpacing="0" >
+                        <Grid.RowSpacing>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="10" Android="0"/>
+                        </Grid.RowSpacing>
                         <Grid.RowDefinitions>
                              <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
@@ -122,13 +131,16 @@
                          BorderColor="White"
                          BorderWidth="1"
                          BackgroundColor="Red"
-                         CornerRadius="40"
                          HorizontalOptions="End"
                          WidthRequest="70"
                          HeightRequest="70"
                          Margin="0,0,20,22"
                          Padding="15"
-                         VerticalOptions="End"/>
+                         VerticalOptions="End">
+                <ImageButton.CornerRadius>
+                     <OnPlatform x:TypeArguments="x:Int32" iOS="35" Android="40"/>
+                </ImageButton.CornerRadius>
+                </ImageButton>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

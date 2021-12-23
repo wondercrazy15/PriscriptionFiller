@@ -23,7 +23,7 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Orientation="Vertical">
-                            <Frame Padding="0" BackgroundColor="Red"
+                            <Frame Padding="0" BackgroundColor="Red" HasShadow="False"
                                    CornerRadius="5">
                                 <Image Source="logowithtext" Aspect="AspectFill"/>
                             </Frame>

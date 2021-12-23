@@ -64,7 +64,7 @@ namespace PrescriptionFiller.ViewModel
             ///var res = loginViewModel.userInfoResponse;
             if (result != null)
             {
-                Constants.user_id = result.data.id.ToString();
+                Constants.user_id = result.data.id;
                 //Global.Constants.user_id = result.data.id.ToString();
                 userInfoModel = result;
                 Shots = result.data.shots;

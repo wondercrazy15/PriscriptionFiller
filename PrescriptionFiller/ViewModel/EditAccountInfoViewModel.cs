@@ -3,6 +3,7 @@ using System.Windows.Input;
 using PrescriptionFiller.Global;
 using PrescriptionFiller.Model;
 using PrescriptionFiller.Services;
+using PrescriptionFiller.Views.PopUpView;
 using Xamarin.Forms;
 
 namespace PrescriptionFiller.ViewModel
@@ -185,7 +186,6 @@ namespace PrescriptionFiller.ViewModel
 
         private async void SaveCommandAsync()
         {
-
             Data userUpdateInfo = new Data();
             userUpdateInfo.first_name = firstName;
             userUpdateInfo.last_name = lastName;
@@ -200,8 +200,24 @@ namespace PrescriptionFiller.ViewModel
             userUpdateInfo.member_id = memberId;
             userUpdateInfo.issue_number = issue;
             userUpdateInfo.personal_health_number = personalHeathNumber;
-            var updatedUserInfo = await _userDetails.UpdateUserInfoModel(userUpdateInfo);
-            await _navigation.PopModalAsync();
+
+            NewLoadingPopUp.Show(_navigation);
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                var updatedUserInfo = await _userDetails.UpdateUserInfoModel(userUpdateInfo);
+                if (updatedUserInfo != null)
+                {
+                    await NewLoadingPopUp.Dismiss(_navigation);
+                    await _navigation.PopModalAsync();
+                }
+                else
+                {
+                    await NewLoadingPopUp.Dismiss(_navigation);
+                }
+            });
+
+            //var updatedUserInfo = await _userDetails.UpdateUserInfoModel(userUpdateInfo);
+            //await _navigation.PopModalAsync();
         }
 
         private void BackCommandAsync(object obj)

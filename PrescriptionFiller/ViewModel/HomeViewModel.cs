@@ -30,8 +30,8 @@ namespace PrescriptionFiller.ViewModel
         public ObservableCollection<HomeModel> Obj_GetHomeModels = new ObservableCollection<HomeModel>();
         public ICommand SentInfoCommand { private set; get; }
 
-        public ObservableCollection<CameraModel> GetNewCameraImage { get; set; }
-        public ObservableCollection<CameraModel> Obj_GetNewCameraImage = new ObservableCollection<CameraModel>();
+        public ObservableCollection<PrescriptionItem> GetNewCameraImage { get; set; }
+        public ObservableCollection<PrescriptionItem> Obj_GetNewCameraImage = new ObservableCollection<PrescriptionItem>();
         public ICommand NewInfoCommand { private set; get; }
 
         public HomeModel _SelectedSentInfoCommand;
@@ -45,8 +45,8 @@ namespace PrescriptionFiller.ViewModel
             }
         }
 
-        public CameraModel _SelectedNewInfoCommand;
-        public CameraModel SelectedNewInfoCommand
+        public PrescriptionItem _SelectedNewInfoCommand;
+        public PrescriptionItem SelectedNewInfoCommand
         {
             get { return _SelectedNewInfoCommand; }
             set
@@ -133,7 +133,8 @@ namespace PrescriptionFiller.ViewModel
             {
                 //sent image click
                 var Data = SelectedNewInfoCommand;
-                Console.WriteLine(SelectedNewInfoCommand.getCameraImage.ToString());
+                //Console.WriteLine(SelectedNewInfoCommand.getCameraImage.ToString());
+                Console.WriteLine(SelectedNewInfoCommand.thumbPath.ToString());
                 await _navigation.PushModalAsync(new NavigationPage(new AddNewPrescriptionView(SelectedNewInfoCommand)));
                 //SelectedSentInfoCommand = null;
             }
@@ -166,15 +167,16 @@ namespace PrescriptionFiller.ViewModel
                 //ICameraServices cameraServices = DependencyService.Get<ICameraServices>();
                 //cameraServices.CameraCaptureImage();
                 ICameraService cameraService = DependencyService.Get<ICameraService>();
-                Task<Photo> takePictureTask = cameraService.TakePicture(delegate (Photo photo)
+                Task<Photo> takePictureTask = cameraService.TakePicture(async delegate (Photo photo)
                 {
                     Console.WriteLine("camera");
                     string thumbPath = P.Combine(P.GetDirectoryName(photo.Picture.Path), P.GetFileNameWithoutExtension(photo.Picture.Path)) + "_thumb.jpg";
                     PrescriptionItem prescriptionItem = new PrescriptionItem();
                     prescriptionItem.thumbPath = thumbPath;
-                    prescriptionItem.userId = int.Parse("201"); //Constants.user_id;
+                    prescriptionItem.userId = Constants.user_id; //Constants.user_id;
                     LocalPrescriptionDatabase.Instance.SaveItem(prescriptionItem);
                     NewCameraData();
+                    await _navigation.PushModalAsync(new NavigationPage(new AddNewPrescriptionView(prescriptionItem)));
                 });
             }
             catch (Exception ex)
@@ -208,20 +210,29 @@ namespace PrescriptionFiller.ViewModel
 
         private async void NewCameraData()
         {
-            NewLoadingPopUp.Show(_navigation);
-            Device.BeginInvokeOnMainThread(async () =>
+            GetNewCameraImage.Clear();
+            IEnumerable<PrescriptionItem> localPrescriptionItems = LocalPrescriptionDatabase.Instance.GetItems(Constants.user_id);//Constants.user_id
+            Console.WriteLine("localPrescriptionItems => " + localPrescriptionItems.Count());
+            if (localPrescriptionItems.Count() > 0)
             {
-                IEnumerable<PrescriptionItem> localPrescriptionItems = LocalPrescriptionDatabase.Instance.GetItems(201);//Constants.user_id
-                Console.WriteLine("localPrescriptionItems => " + localPrescriptionItems.Count());
+                //NewLoadingPopUp.Show(_navigation);
+                //Device.BeginInvokeOnMainThread(async () =>
+                //{
+
                 foreach (PrescriptionItem localPrescriptionItem in localPrescriptionItems)
                 {
-                    GetNewCameraImage.Add(new CameraModel
+                    GetNewCameraImage.Add(new PrescriptionItem
                     {
-                        getCameraImage = localPrescriptionItem.thumbPath
+                        thumbPath = localPrescriptionItem.thumbPath
                     });
                 }
-                await NewLoadingPopUp.Dismiss(_navigation);
-            });
+                //    await NewLoadingPopUp.Dismiss(_navigation);
+                //});
+            }
+            else
+            {
+
+            }
 
 
 

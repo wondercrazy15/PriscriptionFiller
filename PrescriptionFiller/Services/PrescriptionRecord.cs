@@ -14,7 +14,7 @@ namespace PrescriptionFiller.Services
         {
             try
             {
-                string id = "201";// Constants.user_id;
+                int id = Constants.user_id;// Constants.user_id;
                 string url = Constants.baseUrl + "public/api/prescription/user_id/" + id;
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Constants.token_type, Constants.access_token);

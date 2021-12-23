@@ -142,8 +142,8 @@
                             <DataTemplate>
                                 <Frame CornerRadius="10" Padding="0,0,0,0" BackgroundColor="#E1E1E1">
                                     <StackLayout Orientation="Vertical" Padding="0,0,0,0" Spacing="0" VerticalOptions="StartAndExpand">
-                                        <Image HeightRequest="180" Source="{Binding getCameraImage}" Aspect="Fill" Margin="2"/>
-                                        <!--<Image HeightRequest="180" Source="default_image" Aspect="Fill" Margin="2"/>-->
+                                        <Image HeightRequest="180" Source="{Binding thumbPath}" Aspect="Fill" Margin="2"/>
+                                        <!--getCameraImage<Image HeightRequest="180" Source="default_image" Aspect="Fill" Margin="2"/>-->
                                         <!--<StackLayout Orientation="Horizontal" BackgroundColor="#E1E1E1" Padding="0,0,0,0">
                                             <StackLayout Orientation="Vertical" Margin="5,0,0,7" Spacing="0">
                                                 <Label Text="New Image"

@@ -160,7 +160,7 @@ namespace PrescriptionFiller.ViewModel
             var result = await _userDetails.GetUserInfo();
             if (result != null)
             {
-                Constants.user_id = result.data.id.ToString();
+                Constants.user_id = result.data.id;
                 userInfoModel = result;
                 firstName = result.data.first_name;
                 lastName = result.data.last_name;
