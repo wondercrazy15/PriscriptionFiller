@@ -125,7 +125,7 @@
                     </Grid>
                 </StackLayout>
         </ScrollView>
-            <ImageButton Grid.Row="0"
+            <ImageButton Grid.Row="0"                                                 
                          Command="{Binding EditAccountInfoCommand}"
                          Source="pfa_icon_edit_small.png"
                          BorderColor="White"

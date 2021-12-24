@@ -67,7 +67,7 @@
                                       x:Name="sentCollectionView"
                                       ItemsSource="{Binding GetHomeModels}"
                                       SelectedItem="{Binding SelectedSentInfoCommand}"
-                                      Margin="5,0,5,5"
+                                      Margin="5,5,5,5"
                                       SelectionMode="Single"
                                       SelectionChangedCommand="{Binding SentInfoCommand}">
                         <!--SelectedItem="{Binding SelectedUser}"-->
@@ -76,14 +76,14 @@
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Frame CornerRadius="10" Padding="0,0,0,0" BackgroundColor="#E1E1E1" Margin="0">
+                                <Frame CornerRadius="10" IsClippedToBounds="True" Padding="0,0,0,0" BackgroundColor="#E1E1E1" Margin="0">
                                     <!--<Frame.GestureRecognizers>
                                         <TapGestureRecognizer
                                             Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
                                     </Frame.GestureRecognizers>-->
                                     <StackLayout Orientation="Vertical" Padding="0,0,0,0" Spacing="0" VerticalOptions="StartAndExpand">
                                         <!--<Image HeightRequest="180" Source="default_image" Aspect="Fill" Margin="2"/>-->
-                                        <Image HeightRequest="180" Source="{Binding GetImage}" Aspect="Fill" Margin="2"/>
+                                        <Image HeightRequest="180" Source="{Binding GetImage}" Aspect="AspectFill" Margin="0"/>
                                         <StackLayout Orientation="Horizontal" BackgroundColor="#E1E1E1" Padding="0,0,0,0">
                                             <StackLayout Orientation="Vertical" Margin="5,0,0,7" Spacing="0" VerticalOptions="Center">
                                                 <StackLayout Orientation="Horizontal" Spacing="0" Margin="0" Padding="0" VerticalOptions="Center" BackgroundColor="Transparent">
@@ -131,7 +131,7 @@
                                     x:Name="newCollectionView"
                                     ItemsSource="{Binding GetNewCameraImage}"
                                     SelectedItem="{Binding SelectedNewInfoCommand}"
-                                    Margin="5,0,5,5"
+                                    Margin="5,5,5,5" 
                                     SelectionMode="Single"
                                     SelectionChangedCommand="{Binding NewInfoCommand}">
                         <!--SelectedItem="{Binding SelectedUser}"-->
@@ -140,19 +140,20 @@
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Frame CornerRadius="10" Padding="0,0,0,0" BackgroundColor="#E1E1E1">
-                                    <StackLayout Orientation="Vertical" Padding="0,0,0,0" Spacing="0" VerticalOptions="StartAndExpand">
-                                        <Image HeightRequest="180" Source="{Binding thumbPath}" Aspect="Fill" Margin="2"/>
-                                        <!--getCameraImage<Image HeightRequest="180" Source="default_image" Aspect="Fill" Margin="2"/>-->
-                                        <!--<StackLayout Orientation="Horizontal" BackgroundColor="#E1E1E1" Padding="0,0,0,0">
+                                <Frame CornerRadius="10" HasShadow="True" IsClippedToBounds="True" Padding="0" BackgroundColor="#E1E1E1">
+                                     <Image HeightRequest="180" Source="{Binding thumbPath}" Aspect="Fill"/>
+                                    <!--<StackLayout Orientation="Vertical" Padding="0,0,0,0" Spacing="0" VerticalOptions="StartAndExpand">
+                                        <Image HeightRequest="180" Source="{Binding thumbPath}" Aspect="Fill" Margin="0"/>
+                                        getCameraImage<Image HeightRequest="180" Source="default_image" Aspect="Fill" Margin="2"/>
+                                        <StackLayout Orientation="Horizontal" BackgroundColor="#E1E1E1" Padding="0,0,0,0">
                                             <StackLayout Orientation="Vertical" Margin="5,0,0,7" Spacing="0">
                                                 <Label Text="New Image"
                                                            VerticalOptions="Start"
                                                            FontAttributes="Bold"
                                                            LineBreakMode="TailTruncation"/>
                                             </StackLayout>
-                                        </StackLayout>-->
-                                    </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>-->
                                 </Frame>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>

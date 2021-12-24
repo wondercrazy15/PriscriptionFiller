@@ -4,6 +4,7 @@ using PrescriptionFiller.Global;
 using PrescriptionFiller.Model;
 using PrescriptionFiller.Services;
 using PrescriptionFiller.Views;
+using PrescriptionFiller.Views.PopUpView;
 using Xamarin.Forms;
 
 namespace PrescriptionFiller.ViewModel
@@ -153,11 +154,20 @@ namespace PrescriptionFiller.ViewModel
         }
         private async void EditAccountInfoAsync(object obj)
         {
-            await _navigation.PushModalAsync(new NavigationPage(new EditAccountInfoView(userInfoModel)));
+            if (userInfoModel != null)
+            {
+                await _navigation.PushModalAsync(new NavigationPage(new EditAccountInfoView(userInfoModel)));
+            }
+            else
+            {
+
+            }
+
+            
         }
         public async void getUserInfo()
         {
-            var result = await _userDetails.GetUserInfo();
+                var result = await _userDetails.GetUserInfo();
             if (result != null)
             {
                 Constants.user_id = result.data.id;
@@ -175,6 +185,7 @@ namespace PrescriptionFiller.ViewModel
                 memberId = result.data.member_id;
                 issue = result.data.issue_number;
                 personalHeathNumber = result.data.personal_health_number;
+                await NewLoadingPopUp.Dismiss(_navigation);
             }
         }
     }

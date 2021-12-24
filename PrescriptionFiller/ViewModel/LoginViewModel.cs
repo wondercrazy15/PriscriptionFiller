@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 using PrescriptionFiller.Global;
+using PrescriptionFiller.interfaces;
 using PrescriptionFiller.Model;
 using PrescriptionFiller.Services;
 using PrescriptionFiller.Validations;
@@ -41,6 +42,7 @@ namespace PrescriptionFiller.ViewModel
         //Command
         public ICommand SignInCommand { get; }
         public ICommand SignUpCommand { get; }
+        public ICommand ResetPassword { get; }
 
         public LoginViewModel(INavigation navigation)
         {
@@ -50,6 +52,7 @@ namespace PrescriptionFiller.ViewModel
 
             SignInCommand = new Command(SignInCommandAsync);
             SignUpCommand = new Command(SignUpCommandAsync);
+            ResetPassword = new Command(ResetPasswordAsync);
         }
 
 
@@ -59,8 +62,10 @@ namespace PrescriptionFiller.ViewModel
             _navigation.PushModalAsync(new NavigationPage(new SignUpView()));
         }
 
+        [Obsolete]
         private void SignInCommandAsync(object obj)
         {
+            //DependencyService.Get<MyToast>().Display("Prescription is successfully Sent", true);
             GetData();
         }
 
@@ -128,6 +133,35 @@ namespace PrescriptionFiller.ViewModel
                 return true;
             else
                 return false;
+        }
+
+        private void ResetPasswordAsync(object obj)
+        {
+            NewLoadingPopUp.Show(_navigation);
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                bool IsValid = CheckEmail(Email);
+                if (IsValid)
+                {
+                    var result = await _userDetails.ResetPassword(Email);
+                    if (result)
+                    {
+                        await NewLoadingPopUp.Dismiss(_navigation);
+                        await MessagePopup.Show(_navigation, MessagePopup.Type.Success, MessagePopup.Icon.User, "Password Request Sent", "You will receive an email with instructions.");
+                        //await _navigation.PushModalAsync(new HomeView());
+                    }
+                    else
+                    {
+                        await NewLoadingPopUp.Dismiss(_navigation);
+                        await MessagePopup.Show(_navigation, MessagePopup.Type.Error, MessagePopup.Icon.User, "Oops!", "Incorrect email address.");
+                    }
+                }
+                else
+                {
+                    await NewLoadingPopUp.Dismiss(_navigation);
+                }
+
+            });
         }
     }
 }

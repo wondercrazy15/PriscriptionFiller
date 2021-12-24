@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Newtonsoft.Json;
+using PrescriptionFiller.interfaces;
 using PrescriptionFiller.Model;
 using PrescriptionFiller.Services;
 using PrescriptionFiller.Views.PopUpView;
@@ -85,14 +86,26 @@ namespace PrescriptionFiller.ViewModel
                 var result = await _userDetails.GetPharmacySubmittedResponse(_selectedNewPrescriptionInfo, PharmacyID, medicalNote, prescriptionDescriptions);
                 if (result != null)
                 {
-                    var results = await _userDetails.GetUserInfo();
-                    await NewLoadingPopUp.Dismiss(_navigation);
-                    await App.Current.MainPage.DisplayAlert("Success", "Response", "Ok");
+                    try
+                    {
+                        var results = await _userDetails.GetUserInfo();
+                        await NewLoadingPopUp.Dismiss(_navigation);
+                        //await MessagePopup.Show(_navigation, MessagePopup.Type.Success, MessagePopup.Icon.User, "Prescription is successfully Sent", "");
+                        //await App.Current.MainPage.DisplayAlert("Success", "Response", "Ok");
+                        DependencyService.Get<MyToast>().Display("Prescription is successfully Sent", true);
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                  
                 }
                 else
                 {
                     await NewLoadingPopUp.Dismiss(_navigation);
-                    await App.Current.MainPage.DisplayAlert("Failed", "Response", "Ok");
+                    //await MessagePopup.Show(_navigation, MessagePopup.Type.Error, MessagePopup.Icon.User, "Oops!", "Request failed.");
+                    //await App.Current.MainPage.DisplayAlert("Failed", "Response", "Ok");
+                    DependencyService.Get<MyToast>().Display("Request Failed", false);
                 }
             });
 

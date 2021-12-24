@@ -8,4 +8,8 @@ namespace PrescriptionFiller.Model
         public string access_token { get; set; }
         public string refresh_token { get; set; }
     }
+    public class ResetPassword
+    {
+        public string Email { get; set; }
+    }
 }

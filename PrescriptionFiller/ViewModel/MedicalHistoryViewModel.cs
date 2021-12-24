@@ -4,6 +4,7 @@ using PrescriptionFiller.Global;
 using PrescriptionFiller.Model;
 using PrescriptionFiller.Services;
 using PrescriptionFiller.Views;
+using PrescriptionFiller.Views.PopUpView;
 //using PrescriptionFiller.Global;
 using Xamarin.Forms;
 //using static Android.Provider.SyncStateContract;
@@ -58,19 +59,20 @@ namespace PrescriptionFiller.ViewModel
             BackCommand = new Command(BackCommandAsync);
         }
 
-        private async void GetMedicalInfo()
-        {
-            var result = await _userDetails.GetUserInfo();
-            ///var res = loginViewModel.userInfoResponse;
-            if (result != null)
-            {
-                Constants.user_id = result.data.id;
-                //Global.Constants.user_id = result.data.id.ToString();
-                userInfoModel = result;
-                Shots = result.data.shots;
-                Medication = result.data.drugs;
-                Notes = result.data.vaccinations;
-            }
+        public async void GetMedicalInfo()
+        {          
+                var result = await _userDetails.GetUserInfo();
+                ///var res = loginViewModel.userInfoResponse;
+                if (result != null)
+                {
+                    Constants.user_id = result.data.id;
+                    //Global.Constants.user_id = result.data.id.ToString();
+                    userInfoModel = result;
+                    Shots = result.data.shots;
+                    Medication = result.data.drugs;
+                    Notes = result.data.vaccinations;                    
+                }              
+            
         }
 
         private void BackCommandAsync(object obj)
@@ -80,7 +82,14 @@ namespace PrescriptionFiller.ViewModel
 
         private void EditAccountInfoCommandAsync(object obj)
         {
-            _navigation.PushModalAsync(new NavigationPage(new EditMedicalHistoryView(userInfoModel)));
+            if (userInfoModel != null)
+            {
+                _navigation.PushModalAsync(new NavigationPage(new EditMedicalHistoryView(userInfoModel)));
+            }
+            else
+            {
+
+            }
         }
     }
 }

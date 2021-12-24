@@ -14,5 +14,6 @@ namespace PrescriptionFiller.Services
         Task<UserInfoModel> UpdateUserInfoModel(Data getInfoModel);
         Task<PharmecyModel> GetPharmacyList(string city, string pharmacyName);
         Task<PharmacySubmittedResponse> GetPharmacySubmittedResponse(PrescriptionItem _selectedNewPrescriptionInfo, string pharmacyID, string medicalNote, string prescriptionDescriptions);
+        Task<bool> ResetPassword(string email);
     }
 }

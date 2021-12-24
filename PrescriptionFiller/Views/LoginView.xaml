@@ -49,7 +49,7 @@
                         <BoxView x:Name="PasswordBottomLine" BackgroundColor="Red" HeightRequest="1" HorizontalOptions="FillAndExpand" />
                     </StackLayout>
                 </StackLayout>
-                <Button Grid.Row="3" Text="Forgot Password?" BackgroundColor="Transparent" HorizontalOptions="End"/>
+                <Button Grid.Row="3" Text="Forgot Password?" Command="{Binding ResetPassword}" BackgroundColor="Transparent" HorizontalOptions="End"/>
                 <Button Grid.Row="4" Text="Sign In" Command="{Binding SignInCommand}" x:Name="SignInButton" Style="{StaticResource ButtonStyle}"/>
                 <Button Grid.Row="5" Text="Sign Up" Command="{Binding SignUpCommand}" Style="{StaticResource ButtonStyle}"/>
             </Grid>

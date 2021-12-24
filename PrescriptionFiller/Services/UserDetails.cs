@@ -65,8 +65,6 @@ namespace PrescriptionFiller.Services
             return null;
         }
 
-
-
         public async Task<SignUpModel> GetSignUpResponse(string email, string password, string DateOfBirth, string sex, string firstName, string lastName, string phoneNumber, string notes)
         {
             try
@@ -255,6 +253,33 @@ namespace PrescriptionFiller.Services
 
             }
             return null;          
+        }
+        public async Task<bool> ResetPassword(string email)
+        {
+            try
+            {
+                string url = Constants.baseUrl + "public/api/reset_password";
+                HttpClient client = new HttpClient();
+
+                var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("email", email)
+                });
+
+                // client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Constants.token_type, Constants.access_token);
+                HttpResponseMessage response = await client.PostAsync(url, content);
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    var result = await response.Content.ReadAsStringAsync();
+                    var userInfoResponse = JsonConvert.DeserializeObject<ResetPassword>(result);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return false;
         }
     }
 

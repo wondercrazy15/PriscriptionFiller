@@ -218,16 +218,28 @@ namespace PrescriptionFiller.ViewModel
                 //NewLoadingPopUp.Show(_navigation);
                 //Device.BeginInvokeOnMainThread(async () =>
                 //{
-
-                foreach (PrescriptionItem localPrescriptionItem in localPrescriptionItems)
+                try
                 {
-                    GetNewCameraImage.Add(new PrescriptionItem
+                    foreach (PrescriptionItem localPrescriptionItem in localPrescriptionItems)
                     {
-                        thumbPath = localPrescriptionItem.thumbPath
-                    });
+                        string imagepath = "";
+                        if (localPrescriptionItem.thumbPath != null)
+                        {
+                            imagepath = localPrescriptionItem.thumbPath;
+                        }
+                        GetNewCameraImage.Add(new PrescriptionItem
+                        {
+                            thumbPath = imagepath //localPrescriptionItem.thumbPath
+                        }) ;
+                    }
+                    //    await NewLoadingPopUp.Dismiss(_navigation);
+                    //});
                 }
-                //    await NewLoadingPopUp.Dismiss(_navigation);
-                //});
+                catch (Exception ex)
+                {
+
+                }
+                
             }
             else
             {

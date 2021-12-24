@@ -84,7 +84,8 @@ namespace PrescriptionFiller.ViewModel
             medicalUpdateInfo.vaccinations = Notes;
 
             var resp = await _userDetails.UpdateUserInfoModel(medicalUpdateInfo);
-            await _navigation.PushModalAsync(new NavigationPage(new MedicalHistoryView()));
+            await _navigation.PopModalAsync();
+            //await _navigation.PushModalAsync(new NavigationPage(new MedicalHistoryView()));
             //_navigation.PopModalAsync();
         }
 

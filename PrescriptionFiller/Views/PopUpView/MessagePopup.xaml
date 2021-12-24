@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<customcontrols:PopupPage
+ xmlns:customcontrols="clr-namespace:PrescriptionFiller.CustomControls"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    BackgroundColor="White"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="False"
+    x:Class="PrescriptionFiller.Views.PopUpView.MessagePopup">
+    <ContentPage.Content>
+       <StackLayout BackgroundColor="AliceBlue"
+                      VerticalOptions="FillAndExpand"
+                      HorizontalOptions="FillAndExpand">
+             <StackLayout
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="Transparent"
+                Spacing="0" Margin="10,0,10,0" Padding="0"
+                HeightRequest="200">
+                <Frame
+                    BackgroundColor="{Binding PopupColor}"
+                    CornerRadius="20"
+                    HasShadow="True"
+                    HorizontalOptions="FillAndExpand">
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
+                          <ImageButton BackgroundColor="Transparent"
+                            HorizontalOptions="End"
+                            CornerRadius="10" HeightRequest="30" WidthRequest="30"
+                                 Command="{Binding CloseCommand}"
+                                 Source="{Binding ButtonImage}"
+                            />
+                        <Image Source="{Binding Icon}"
+                               HeightRequest="50" WidthRequest="50"
+                               HorizontalOptions="CenterAndExpand"/>
+                        <Label TextColor="White"
+                               BackgroundColor="{Binding PopupColor}"
+                               Text="{Binding Title}"
+                               FontSize="24"
+                               HorizontalOptions="CenterAndExpand" />
+                        <Label TextColor="White"
+                               FontSize="100"
+                               BackgroundColor="{Binding PopupColor}"
+                               Text="{Binding Message}"
+                               HorizontalOptions="CenterAndExpand">
+                            <Label.FontSize>
+                                <OnPlatform x:TypeArguments="x:Double"
+						        Android="16"
+						        iOS="12" />
+                            </Label.FontSize>
+                        </Label>
+                    </StackLayout>
+                </Frame>
+
+                <!--<StackLayout Orientation="Vertical" Spacing="5" BackgroundColor="Transparent">
+
+                    <customcontrols:TintedImage TintColor="{Binding PopupColor}">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource"
+						Android="pfa_popup_tail.png"
+						iOS="pfa_popup_tail.png" />
+                        </Image.Source>
+                    </customcontrols:TintedImage>
+                    <ImageButton BackgroundColor="Black"
+                            HorizontalOptions="Center"
+                            CornerRadius="10"
+                                 Command="{Binding CloseCommand}"
+                                 Source="{Binding ButtonImage}"
+                            />
+                     <customcontrols:FloatingButton BackgroundColor="Black"
+                                         
+                                          HorizontalOptions="Center"
+                                          TextColor="Transparent"
+                                          Command="{Binding CloseCommand}"
+                                          Image="{Binding ButtonImage}">
+                        <Button.BorderRadius>
+                            <OnPlatform x:TypeArguments="x:Int32"
+						        Android="256"
+                                    iOS="24" />
+                        </Button.BorderRadius>
+                    </customcontrols:FloatingButton>
+                    <Frame HasShadow="True" CornerRadius="100" Padding="0" Margin="0" VerticalOptions="Center" HorizontalOptions="Center">
+                       
+                    </Frame>
+                    
+                </StackLayout>-->
+            </StackLayout>
+        </StackLayout> 
+    </ContentPage.Content>
+</customcontrols:PopupPage>
