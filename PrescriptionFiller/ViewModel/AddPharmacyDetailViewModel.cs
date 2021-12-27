@@ -107,7 +107,9 @@ namespace PrescriptionFiller.ViewModel
 
         private async void LocationCommandAsync(object obj)
         {
-            var hasPermission = await GeoLocationUtil.CheckPermissions(Permission.Location);
+            try
+            {
+                var hasPermission = await GeoLocationUtil.CheckPermissions(Permission.Location);
             longitude = null;
             latitude = null;
             if (!hasPermission)
@@ -168,6 +170,11 @@ namespace PrescriptionFiller.ViewModel
                     await NewLoadingPopUp.Dismiss(_navigation);
                 }
             });
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         private async void SendToPharmacyCommandAsync(object obj)

@@ -222,15 +222,18 @@ namespace PrescriptionFiller.ViewModel
                 {
                     foreach (PrescriptionItem localPrescriptionItem in localPrescriptionItems)
                     {
-                        string imagepath = "";
-                        if (localPrescriptionItem.thumbPath != null)
+                        if (localPrescriptionItem.userId == Constants.user_id)
                         {
-                            imagepath = localPrescriptionItem.thumbPath;
+                            string imagepath = "";
+                            if (localPrescriptionItem.thumbPath != null)
+                            {
+                                imagepath = localPrescriptionItem.thumbPath;
+                            }
+                            GetNewCameraImage.Add(new PrescriptionItem
+                            {
+                                thumbPath = imagepath //localPrescriptionItem.thumbPath
+                            });
                         }
-                        GetNewCameraImage.Add(new PrescriptionItem
-                        {
-                            thumbPath = imagepath //localPrescriptionItem.thumbPath
-                        }) ;
                     }
                     //    await NewLoadingPopUp.Dismiss(_navigation);
                     //});

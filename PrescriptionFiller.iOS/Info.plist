@@ -38,5 +38,9 @@
 	<string>Camera is needed to take a photo of your prescription</string>
 	<key>Camera is needed to take a photo of your prescription</key>
 	<string>This app needs access to the camera</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs access to the location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This will be called if location is used behind the scenes</string>
 </dict>
 </plist>

@@ -72,51 +72,57 @@ namespace PrescriptionFiller.ViewModel
         [Obsolete]
         private async void GetData()
         {
-            NewLoadingPopUp.Show(_navigation);
-            Device.BeginInvokeOnMainThread(async () =>
+            if (!string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password))
             {
                 bool IsValid = CheckEmail(Email);
                 if (IsValid)
                 {
-                    Constants.access_token = null;
-                    Constants.token_type = null;
-                    Constants.user_id =0;
-                    var result = await _userDetails.GetLoginResponse(Email, Password);
-                    if (result != null)
+                    NewLoadingPopUp.Show(_navigation);
+                    Device.BeginInvokeOnMainThread(async () =>
                     {
-                        LoginModel loginResponse = new LoginModel();
-                        loginResponse = result;
-                        Constants.access_token = loginResponse.access_token;
-                        Constants.token_type = loginResponse.token_type;
-                        Constants.user_password = Password;
-                        //GetUserId();
-                        var userdata = await _userDetails.GetUserInfo();
+                        Constants.access_token = null;
+                        Constants.token_type = null;
+                        Constants.user_id = 0;
+                        var result = await _userDetails.GetLoginResponse(Email, Password);
                         if (result != null)
                         {
-                            Constants.user_id = userdata.data.id;
-                            await NewLoadingPopUp.Dismiss(_navigation);
-                            await _navigation.PushModalAsync(new HomeView());
+                            LoginModel loginResponse = new LoginModel();
+                            loginResponse = result;
+                            Constants.access_token = loginResponse.access_token;
+                            Constants.token_type = loginResponse.token_type;
+                            Constants.user_password = Password;
+                            //GetUserId();
+                            var userdata = await _userDetails.GetUserInfo();
+                            if (result != null)
+                            {
+                                Constants.user_id = userdata.data.id;
+                                await NewLoadingPopUp.Dismiss(_navigation);
+                                await _navigation.PushModalAsync(new HomeView());
+                            }
+                            //await NewLoadingPopUp.Dismiss(_navigation);
+                            //await _navigation.PushModalAsync(new HomeView());
                         }
-                        //await NewLoadingPopUp.Dismiss(_navigation);
-                        //await _navigation.PushModalAsync(new HomeView());
-                    }
-                    else
-                    {
-                        await NewLoadingPopUp.Dismiss(_navigation);
-                    }
+                        else
+                        {
+                            await NewLoadingPopUp.Dismiss(_navigation);
+                            await MessagePopup.Show(_navigation, MessagePopup.Type.Error, MessagePopup.Icon.User, "Oops!", "InValid Credentials");
+                        }
+                    });
                 }
                 else
                 {
-                    await NewLoadingPopUp.Dismiss(_navigation);
+                    await MessagePopup.Show(_navigation, MessagePopup.Type.Error, MessagePopup.Icon.User, "Oops!", "Please enter valid email");
                 }
-
-            });
-            
+            }
+            else
+            {
+                await MessagePopup.Show(_navigation, MessagePopup.Type.Error, MessagePopup.Icon.User, "Oops!", "Please Enter Credentials");
+            }
         }
 
         //private async void GetUserId()
         //{
-          
+
         //    var result = await _userDetails.GetUserInfo();
         //    if (result != null)
         //    {
@@ -126,7 +132,7 @@ namespace PrescriptionFiller.ViewModel
 
         public bool CheckEmail(string email)
         {
-          bool IsEmail = _validation.EmailValidation(email);
+            bool IsEmail = _validation.EmailValidation(email);
             if (IsEmail)
                 return true;
             else
@@ -142,33 +148,39 @@ namespace PrescriptionFiller.ViewModel
                 return false;
         }
 
-        private void ResetPasswordAsync(object obj)
+        private async void ResetPasswordAsync(object obj)
         {
-            NewLoadingPopUp.Show(_navigation);
-            Device.BeginInvokeOnMainThread(async () =>
+            if (!string.IsNullOrEmpty(Email))
             {
                 bool IsValid = CheckEmail(Email);
                 if (IsValid)
                 {
-                    var result = await _userDetails.ResetPassword(Email);
-                    if (result)
+                    NewLoadingPopUp.Show(_navigation);
+                    Device.BeginInvokeOnMainThread(async () =>
                     {
-                        await NewLoadingPopUp.Dismiss(_navigation);
-                        await MessagePopup.Show(_navigation, MessagePopup.Type.Success, MessagePopup.Icon.User, "Password Request Sent", "You will receive an email with instructions.");
-                        //await _navigation.PushModalAsync(new HomeView());
-                    }
-                    else
-                    {
-                        await NewLoadingPopUp.Dismiss(_navigation);
-                        await MessagePopup.Show(_navigation, MessagePopup.Type.Error, MessagePopup.Icon.User, "Oops!", "Incorrect email address.");
-                    }
+                        var result = await _userDetails.ResetPassword(Email);
+                        if (result)
+                        {
+                            await NewLoadingPopUp.Dismiss(_navigation);
+                            await MessagePopup.Show(_navigation, MessagePopup.Type.Success, MessagePopup.Icon.User, "Password Request Sent", "You will receive an email with instructions.");
+                            //await _navigation.PushModalAsync(new HomeView());
+                        }
+                        else
+                        {
+                            await NewLoadingPopUp.Dismiss(_navigation);
+                            await MessagePopup.Show(_navigation, MessagePopup.Type.Error, MessagePopup.Icon.User, "Oops!", "Server not responded.");
+                        }
+                    });
                 }
                 else
                 {
-                    await NewLoadingPopUp.Dismiss(_navigation);
+                    await MessagePopup.Show(_navigation, MessagePopup.Type.Error, MessagePopup.Icon.User, "Oops!", "Incorrect email address.");
                 }
-
-            });
+            }
+            else
+            {
+                await MessagePopup.Show(_navigation, MessagePopup.Type.Error, MessagePopup.Icon.User, "Oops!", "Please enter email");
+            }
         }
     }
 }

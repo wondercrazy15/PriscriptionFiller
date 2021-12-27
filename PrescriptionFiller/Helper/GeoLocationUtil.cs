@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using CoreLocation;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using Xamarin.Essentials;
@@ -9,7 +10,6 @@ namespace PrescriptionFiller.Helper
 {
     public static class GeoLocationUtil
     {
-        [Obsolete]
         public static async Task<bool> CheckPermissions(Permission permission)
         {
             var permissionStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(permission);
@@ -18,7 +18,6 @@ namespace PrescriptionFiller.Helper
             {
                 if (Device.RuntimePlatform == Device.iOS)
                 {
-
                     var title = $"{permission} Permission";
                     var question = $"To use this plugin the {permission} permission is required. Please go into Settings and turn on {permission} for the app.";
                     var positive = "Settings";

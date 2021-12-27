@@ -133,6 +133,12 @@
     <PackageReference Include="Rg.Plugins.Popup">
       <Version>2.0.0.14</Version>
     </PackageReference>
+    <PackageReference Include="Plugin.Permissions">
+      <Version>6.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Geolocator">
+      <Version>4.5.0.6</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -196,6 +202,11 @@
     <BundleResource Include="Resources\sent_icon.png" />
     <BundleResource Include="Resources\down_arrow_icon.png" />
     <BundleResource Include="Resources\back_arrow.png" />
+    <BundleResource Include="Resources\Icons\Close_white.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </BundleResource>
+    <BundleResource Include="Resources\Icons\pfa_icon_user.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderer\" />
@@ -204,6 +215,7 @@
     <Folder Include="services\" />
     <Folder Include="Assets.xcassets\back_arrow.imageset\" />
     <Folder Include="Assets.xcassets\launch_screen.imageset\" />
+    <Folder Include="Resources\Icons\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\addcamera_icon.png">
