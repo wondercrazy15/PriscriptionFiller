@@ -281,6 +281,27 @@ namespace PrescriptionFiller.Services
             }
             return false;
         }
+
+        public async Task<PharmecyModel> MyLocationResponse(string lattitude, string longitude)
+        {
+            try
+            {
+                string url = Constants.baseUrl + "public/api/pharmacy/latitude/" + lattitude + "/longitude/" + longitude;
+                HttpClient client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Constants.token_type, Constants.access_token);
+                HttpResponseMessage response = await client.GetAsync(url);
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    var result = await response.Content.ReadAsStringAsync();
+                    var userInfoResponse = JsonConvert.DeserializeObject<PharmecyModel>(result);
+                    return userInfoResponse;
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return null;
+        }
     }
 
 }
