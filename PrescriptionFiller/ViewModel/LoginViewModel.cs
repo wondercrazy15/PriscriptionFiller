@@ -89,9 +89,16 @@ namespace PrescriptionFiller.ViewModel
                         Constants.access_token = loginResponse.access_token;
                         Constants.token_type = loginResponse.token_type;
                         Constants.user_password = Password;
-                        GetUserId();
-                        await NewLoadingPopUp.Dismiss(_navigation);
-                        await _navigation.PushModalAsync(new HomeView());
+                        //GetUserId();
+                        var userdata = await _userDetails.GetUserInfo();
+                        if (result != null)
+                        {
+                            Constants.user_id = userdata.data.id;
+                            await NewLoadingPopUp.Dismiss(_navigation);
+                            await _navigation.PushModalAsync(new HomeView());
+                        }
+                        //await NewLoadingPopUp.Dismiss(_navigation);
+                        //await _navigation.PushModalAsync(new HomeView());
                     }
                     else
                     {
@@ -107,15 +114,15 @@ namespace PrescriptionFiller.ViewModel
             
         }
 
-        private async void GetUserId()
-        {
+        //private async void GetUserId()
+        //{
           
-            var result = await _userDetails.GetUserInfo();
-            if (result != null)
-            {
-                Constants.user_id = result.data.id;
-            }
-        }
+        //    var result = await _userDetails.GetUserInfo();
+        //    if (result != null)
+        //    {
+        //        Constants.user_id = result.data.id;
+        //    }
+        //}
 
         public bool CheckEmail(string email)
         {

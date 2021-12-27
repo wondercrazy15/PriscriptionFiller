@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using PrescriptionFiller.interfaces;
 using PrescriptionFiller.Model;
 using PrescriptionFiller.Services;
+using PrescriptionFiller.Views;
 using PrescriptionFiller.Views.PopUpView;
 using Xamarin.Forms;
 
@@ -86,40 +87,25 @@ namespace PrescriptionFiller.ViewModel
                 var result = await _userDetails.GetPharmacySubmittedResponse(_selectedNewPrescriptionInfo, PharmacyID, medicalNote, prescriptionDescriptions);
                 if (result != null)
                 {
-                    try
-                    {
-                        var results = await _userDetails.GetUserInfo();
-                        await NewLoadingPopUp.Dismiss(_navigation);
-                        //await MessagePopup.Show(_navigation, MessagePopup.Type.Success, MessagePopup.Icon.User, "Prescription is successfully Sent", "");
-                        //await App.Current.MainPage.DisplayAlert("Success", "Response", "Ok");
-                        DependencyService.Get<MyToast>().Display("Prescription is successfully Sent", true);
-                    }
-                    catch (Exception ex)
-                    {
+                    var results = await _userDetails.GetUserInfo();
+                    await NewLoadingPopUp.Dismiss(_navigation);
 
-                    }
-                  
+                    foreach (var item in _navigation.ModalStack)
+                    {
+                        if (_navigation.ModalStack is HomeView)
+                        {
+                            return;
+                        }
+                        await item.Navigation.PopModalAsync();
+                    }                  
+                    //DependencyService.Get<MyToast>().Display("Prescription is successfully Sent",true);
                 }
                 else
                 {
-                    await NewLoadingPopUp.Dismiss(_navigation);
-                    //await MessagePopup.Show(_navigation, MessagePopup.Type.Error, MessagePopup.Icon.User, "Oops!", "Request failed.");
-                    //await App.Current.MainPage.DisplayAlert("Failed", "Response", "Ok");
+                    await NewLoadingPopUp.Dismiss(_navigation);                                       
                     DependencyService.Get<MyToast>().Display("Request Failed", false);
                 }
-            });
-
-
-            //var resp = await _userDetails.GetPharmacySubmittedResponse(_selectedNewPrescriptionInfo);
-
-            //if (resp != null)
-            //{
-            //    await App.Current.MainPage.DisplayAlert("Success", "Response", "Ok");
-            //}
-            //else
-            //{
-            //    await App.Current.MainPage.DisplayAlert("Failed", "Response", "Ok");
-            //}
+            });         
         }
 
         private void SelectedItemCommandAsync(object obj)

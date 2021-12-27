@@ -24,13 +24,23 @@ namespace PrescriptionFiller.Views
             if (item == null)
                 return;
 
-            var page = (Page)Activator.CreateInstance(item.TargetType);
-            page.Title = item.Title;
+            if (item.Id == 3)
+            {
+                Application.Current.MainPage = new LoginView();
+            }
+            else
+            {
+                var page = (Page)Activator.CreateInstance(item.TargetType);
+                page.Title = item.Title;
+                Detail = new NavigationPage(page);
+                IsPresented = false;
+                MasterPage.ListView.SelectedItem = null;
+            }
+        }
 
-            Detail = new NavigationPage(page);
-            IsPresented = false;
-
-            MasterPage.ListView.SelectedItem = null;
+        protected override bool OnBackButtonPressed()
+        {
+            return false;
         }
     }
 }

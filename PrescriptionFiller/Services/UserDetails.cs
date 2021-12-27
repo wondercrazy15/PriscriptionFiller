@@ -217,7 +217,7 @@ namespace PrescriptionFiller.Services
             #endregion
             try
             {
-                string url = "https://api.prescriptionfiller.com/api/prescription/";
+                string url = Constants.baseUrl + "api/prescription/";
                 HttpClient client = new HttpClient();
                 byte[] imageArray = System.IO.File.ReadAllBytes(_selectedNewPrescriptionInfo.thumbPath);
                 var base64ImageRepresentation = Convert.ToBase64String(imageArray);              
