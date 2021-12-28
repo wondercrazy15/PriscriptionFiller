@@ -26,7 +26,7 @@ namespace PrescriptionFiller.Services
                     new KeyValuePair<string, string>("client_secret", "lWxODhkqibWRX2knZqBlTLk5YrDqGTuBtgNKnyWU"),
                     new KeyValuePair<string, string>("username", email),
                     new KeyValuePair<string, string>("password", password),
-                     new KeyValuePair<string, string>("scope", ""),
+                    new KeyValuePair<string, string>("scope", ""),
                 });
 
                 HttpResponseMessage response = await client.PostAsync(url, content);
@@ -224,7 +224,7 @@ namespace PrescriptionFiller.Services
 
                 SendPharmacyInfo content = new SendPharmacyInfo();
                 content.user_id = Constants.user_id.ToString();
-                content.pharmacy_id = pharmacyID;
+                content.pharmacy_id = pharmacyID;  
                 content.description = prescriptionDescriptions;
                 content.extended_health = "";
                 content.fax_id = _selectedNewPrescriptionInfo.pharmacyFaxNumber;

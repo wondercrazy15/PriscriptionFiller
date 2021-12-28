@@ -149,23 +149,30 @@ namespace PrescriptionFiller.ViewModel
                 {
                     if (_validation.EmailValidation(Email))
                     {
-                        NewLoadingPopUp.Show(_navigation);
-                        Device.BeginInvokeOnMainThread(async () =>
+                        if (Password == Co_Password)
                         {
-                            var result = await _userDetails.GetSignUpResponse(Email, Password, DateOfBirth, Sex, FirstName, LastName, PhoneNumber, "notes");
-
-                            if (result != null)
+                            NewLoadingPopUp.Show(_navigation);
+                            Device.BeginInvokeOnMainThread(async () =>
                             {
-                                await NewLoadingPopUp.Dismiss(_navigation);
-                                await _navigation.PopModalAsync();
-                            }
-                            else
-                            {
-                                await NewLoadingPopUp.Dismiss(_navigation);
-                                // await _navigation.PopModalAsync();
-                            }
+                                var result = await _userDetails.GetSignUpResponse(Email, Password, DateOfBirth, Sex, FirstName, LastName, PhoneNumber, "notes");
 
-                        });
+                                if (result != null)
+                                {
+                                    await NewLoadingPopUp.Dismiss(_navigation);
+                                    await _navigation.PopModalAsync();
+                                }
+                                else
+                                {
+                                    await NewLoadingPopUp.Dismiss(_navigation);
+                                    // await _navigation.PopModalAsync();
+                                }
+
+                            });
+                        }
+                        else
+                        {
+                            await MessagePopup.Show(_navigation, MessagePopup.Type.Error, MessagePopup.Icon.User, "Oops!", "Password does not match.");
+                        }
                     }
                     else
                     {

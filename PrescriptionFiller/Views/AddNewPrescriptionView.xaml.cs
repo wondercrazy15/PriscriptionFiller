@@ -8,7 +8,6 @@ namespace PrescriptionFiller.Views
 {
     public partial class AddNewPrescriptionView : ContentPage
     {
-
         public AddNewPrescriptionView(PrescriptionItem SelctedNewPrescriptionInfo)
         {
             InitializeComponent();
