@@ -35,12 +35,12 @@
         <StackLayout.Spacing>
             <OnPlatform x:TypeArguments="x:Double" iOS="10" Android="0"/>
         </StackLayout.Spacing>
-        <Label Text="Search By City" FontAttributes="Bold" Padding="0" Margin="0"/>
-        <customcontrols:CustomEntry Text="{Binding city}" Placeholder="Enter City Name" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0"/>
+        <Label Text="Search By City" FontAttributes="Bold" Padding="0" Margin="0" TextColor="Black"/>
+        <customcontrols:CustomEntry Text="{Binding city}" Placeholder="Enter City Name" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0" TextColor="Black" PlaceholderColor="Gray"/>
         <BoxView x:Name="city" BackgroundColor="Red" HeightRequest="1" HorizontalOptions="FillAndExpand" />
         <Label Text="OR" FontAttributes="Bold" Padding="0" Margin="0" HorizontalOptions="Center" TextColor="Red"/>
-        <Label Text="Search By Pharmacy Name" FontAttributes="Bold" Padding="0" Margin="0"/>
-        <customcontrols:CustomEntry Text="{Binding pharmacyName}" Placeholder="Enter Pharmacy Name" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0"/>
+        <Label Text="Search By Pharmacy Name" FontAttributes="Bold" Padding="0" Margin="0" TextColor="Black"/>
+        <customcontrols:CustomEntry Text="{Binding pharmacyName}" Placeholder="Enter Pharmacy Name" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Margin="0" TextColor="Black" PlaceholderColor="Gray"/>
         <BoxView x:Name="pharmacyName" BackgroundColor="Red" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,0,0,20"/>
         <Grid VerticalOptions="StartAndExpand" HeightRequest="100">
             <Grid.ColumnDefinitions>
@@ -99,15 +99,15 @@
                                     <StackLayout Orientation="Vertical" Padding="5,0,0,0" Spacing="2" VerticalOptions="StartAndExpand">
                                         <StackLayout Orientation="Horizontal" Padding="0,0,0,0">
                                             <Label FontSize="Medium" Text="Name:" TextColor="Black" x:Name="NameLabel" />
-                                            <Label Text="{Binding name}" x:Name="NameValueLabel"/>
+                                            <Label Text="{Binding name}" x:Name="NameValueLabel" TextColor="Black"/>
                                         </StackLayout>
                                         <StackLayout Orientation="Horizontal" Padding="0,0,0,0">
                                             <Label FontSize="Medium" Text="Address:" TextColor="Black" x:Name="AddressLabel"/>
-                                            <Label Text="{Binding address}" x:Name="AddressValueLabel"/>
+                                            <Label Text="{Binding address}" x:Name="AddressValueLabel" TextColor="black"/>
                                         </StackLayout>
                                         <StackLayout Orientation="Horizontal" Padding="0,0,0,0">
                                             <Label FontSize="Medium" Text="Fax:" TextColor="Black" x:Name="FaxLabel" />
-                                            <Label Text="{Binding fax_number}" x:Name="FaxValueLabel"/>
+                                            <Label Text="{Binding fax_number}" x:Name="FaxValueLabel" TextColor="Black"/>
                                         </StackLayout>
                                         <BoxView HeightRequest="1" BackgroundColor="Gray" Margin="0,5,0,0"/>
                                     </StackLayout>
@@ -119,7 +119,7 @@
             </ScrollView>
         </StackLayout>
 
-        <Button Text="Send To Pharmacy" Command="{Binding SendToPharmacyCommand}" x:Name="SignInButton1" Style="{StaticResource ButtonStyle}"
+        <Button Text="Send To Pharmacy" Command="{Binding SendToPharmacyCommand}" IsEnabled="{Binding Enable}" x:Name="SignInButton1" Style="{StaticResource ButtonStyle}"
                         VerticalOptions="EndAndExpand"/>
     </StackLayout>
 </ContentPage>

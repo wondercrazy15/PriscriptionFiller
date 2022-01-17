@@ -76,7 +76,17 @@
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Frame CornerRadius="10" IsClippedToBounds="True" Padding="0,0,0,0" BackgroundColor="#E1E1E1" Margin="0">
+                                <StackLayout>
+                                     <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+                                            <VisualState Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter Property="BackgroundColor" Value="White" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                     <Frame CornerRadius="10" IsClippedToBounds="True" Padding="0,0,0,0" BackgroundColor="#E1E1E1" Margin="0">
                                     <!--<Frame.GestureRecognizers>
                                         <TapGestureRecognizer
                                             Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
@@ -88,10 +98,12 @@
                                             <StackLayout Orientation="Vertical" Margin="5,0,0,7" Spacing="0" VerticalOptions="Center">
                                                 <StackLayout Orientation="Horizontal" Spacing="0" Margin="0" Padding="0" VerticalOptions="Center" BackgroundColor="Transparent">
                                                     <Label Text="Pharmacy: "
+                                                           TextColor="Black"
                                                            VerticalOptions="Center"
                                                            FontSize="12"
                                                            LineBreakMode="TailTruncation"/>
                                                     <Label Text="{Binding Pharmacy}"
+                                                           TextColor="Black"
                                                            VerticalOptions="Center"
                                                            FontAttributes="Bold"
                                                            FontSize="12"
@@ -99,12 +111,14 @@
                                                 </StackLayout>
                                                 <StackLayout Orientation="Horizontal" Spacing="0" Margin="0" Padding="0" VerticalOptions="Center" BackgroundColor="Transparent">
                                                     <Label Text="Physician: "
+                                                           TextColor="Black"
                                                            VerticalOptions="Center"
                                                            FontSize="12"
                                                            LineBreakMode="TailTruncation"/>
                                                     <Label Text="{Binding Physician}"
                                                            VerticalOptions="Center"
                                                            FontAttributes="Bold"
+                                                           TextColor="Black"
                                                            FontSize="12"
                                                            LineBreakMode="TailTruncation"/>
                                                 </StackLayout>
@@ -112,6 +126,8 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </Frame>
+                                </StackLayout>
+                               
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
@@ -140,7 +156,17 @@
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Frame CornerRadius="10" HasShadow="True" IsClippedToBounds="True" Padding="0" BackgroundColor="#E1E1E1">
+                                <StackLayout>
+                                     <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+                                            <VisualState Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter Property="BackgroundColor" Value="White" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                      <Frame CornerRadius="10" HasShadow="True" IsClippedToBounds="True" Padding="0" BackgroundColor="#E1E1E1">
                                      <Image HeightRequest="180" Source="{Binding thumbPath}" Aspect="Fill"/>
                                     <!--<StackLayout Orientation="Vertical" Padding="0,0,0,0" Spacing="0" VerticalOptions="StartAndExpand">
                                         <Image HeightRequest="180" Source="{Binding thumbPath}" Aspect="Fill" Margin="0"/>
@@ -155,6 +181,8 @@
                                         </StackLayout>
                                     </StackLayout>-->
                                 </Frame>
+                                </StackLayout>
+                              
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>

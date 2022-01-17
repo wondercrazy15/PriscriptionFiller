@@ -37,15 +37,15 @@
             <ScrollView>
                 <StackLayout Margin="15" Spacing="20">
                 <StackLayout Spacing="0">
-                    <customcontrols:CustomEntry Text="{Binding FirstName}" FontSize="Medium" TextChanged="Full_Name_Entry_TextChanged" Placeholder="First Name"/>
+                    <customcontrols:CustomEntry Text="{Binding FirstName}" FontSize="Medium" TextChanged="Full_Name_Entry_TextChanged" Placeholder="First Name" PlaceholderColor="Gray" TextColor="Black" />
                     <BoxView HeightRequest="1" x:Name="FullNameErrorColor" BackgroundColor="{Binding FirstErrorLine}"/>
                 </StackLayout>
                 <StackLayout Spacing="0">
-                    <customcontrols:CustomEntry Text="{Binding LastName}" TextChanged="Last_Name_Entry_TextChanged" Placeholder="Last Name"/>
+                    <customcontrols:CustomEntry Text="{Binding LastName}" TextChanged="Last_Name_Entry_TextChanged" Placeholder="Last Name" PlaceholderColor="Gray" TextColor="Black" />
                     <BoxView x:Name="LastNameErrorColor" HeightRequest="1" BackgroundColor="{Binding LastErrorLine}"/>
                 </StackLayout>
                 <Label Text="Birthday" TextColor="Black"/>
-                <customcontrols:CustomDatePicker Date="{Binding DateOfBirth}" TextColor="Black" />
+                <customcontrols:CustomDatePicker Date="{Binding DateOfBirth}" TextColor="Black" HasBorder="True"/>
                 <StackLayout Orientation="Horizontal" Spacing="10">
                    <input:RadioButtonGroupView Orientation="Horizontal" Spacing="10" SelectedItemChanged="RadioButtonGroupView_SelectedItemChanged">
                        <input:RadioButton Text="Male" TextFontSize="Medium" TextColor="Black" />
@@ -53,19 +53,19 @@
                    </input:RadioButtonGroupView>
                 </StackLayout>
                <StackLayout Spacing="0">
-                    <customcontrols:CustomEntry Text="{Binding PhoneNumber}" TextChanged="Phone_Entry_TextChanged" Placeholder="Phone Number"/>
+                    <customcontrols:CustomEntry Text="{Binding PhoneNumber}" TextChanged="Phone_Entry_TextChanged" Placeholder="Phone Number" PlaceholderColor="Gray" TextColor="Black" Keyboard="Telephone"/>
                     <BoxView x:Name="PhoneNumberErrorColor" HeightRequest="1" BackgroundColor="{Binding PhoneErrorLine}"/>
                 </StackLayout>
                  <StackLayout Spacing="0">
-                    <customcontrols:CustomEntry Text="{Binding Email}" TextChanged="EmailEntry_TextChanged" Placeholder="Email"/>
+                    <customcontrols:CustomEntry Text="{Binding Email}" TextChanged="EmailEntry_TextChanged" Placeholder="Email" PlaceholderColor="Gray" TextColor="Black" />
                     <BoxView x:Name="EmailErrorColor" HeightRequest="1" BackgroundColor="{Binding EmailErrorLine}" />
                 </StackLayout>
                  <StackLayout Spacing="0">
-                    <customcontrols:CustomEntry x:Name="Password" Text="{Binding Password}" TextChanged="Password_Entry_TextChanged" Placeholder="Password" IsPassword="True"/>
+                    <customcontrols:CustomEntry x:Name="Password" Text="{Binding Password}" TextChanged="Password_Entry_TextChanged" Placeholder="Password" IsPassword="True" PlaceholderColor="Gray" TextColor="Black" />
                     <BoxView x:Name="PasswordErrorColor" HeightRequest="1" BackgroundColor="{Binding PasswordErrorLine}" />
                 </StackLayout>
                  <StackLayout Spacing="0">
-                    <customcontrols:CustomEntry x:Name="Co_Password" Text="{Binding Co_Password}" TextChanged="Co_Password_Entry_TextChanged" Placeholder="Confirm Password" IsPassword="True"/>
+                    <customcontrols:CustomEntry x:Name="Co_Password" Text="{Binding Co_Password}" TextChanged="Co_Password_Entry_TextChanged" Placeholder="Confirm Password" IsPassword="True" PlaceholderColor="Gray" TextColor="Black" />
                     <BoxView x:Name="Co_PasswordErrorColor" HeightRequest="1" BackgroundColor="{Binding Co_PasswordErrorLine}" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" Spacing="0">

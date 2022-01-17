@@ -1,7 +1,9 @@
 ﻿using System;
 using PrescriptionFiller.CustomControls;
+using PrescriptionFiller.Droid.Renderer;
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-
+[assembly: ExportRenderer(typeof(CustomDatePicker), typeof(CustomDatePickerRenderer))]
 namespace PrescriptionFiller.Droid.Renderer
 {
     [Obsolete]
@@ -42,13 +44,15 @@ namespace PrescriptionFiller.Droid.Renderer
 
             if (e.PropertyName == CustomDatePicker.TextColorProperty.PropertyName)
             {
-                this.Control.SetTextColor(datePicker.TextColor.ToAndroid());
+                //this.Control.SetTextColor(datePicker.TextColor.ToAndroid());
+                this.Control.SetTextColor(Android.Graphics.Color.Black);
             }
         }
 
         void SetTextColor(CustomDatePicker datePicker)
         {
-            this.Control.SetTextColor(datePicker.TextColor.ToAndroid());
+            //this.Control.SetTextColor(datePicker.TextColor.ToAndroid());
+            this.Control.SetTextColor(Android.Graphics.Color.Black);
         }
     }
 }

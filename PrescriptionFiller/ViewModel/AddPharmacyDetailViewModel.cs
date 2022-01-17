@@ -27,7 +27,19 @@ namespace PrescriptionFiller.ViewModel
         INavigation _navigation;
         string PharmacyID, medicalNote, prescriptionDescriptions;
         String _city, _pharmacyName;
-
+        bool _Enable;
+        public bool Enable
+        {
+            get
+            {
+                return _Enable;
+            }
+            set
+            {
+                _Enable = value;
+                OnPropertyChanged("Enable");
+            }
+        }
         public string pharmacyName
         {
             get
@@ -209,7 +221,7 @@ namespace PrescriptionFiller.ViewModel
                 else
                 {
                     await NewLoadingPopUp.Dismiss(_navigation);
-                    DependencyService.Get<MyToast>().Display("Request Failed", false);
+                    //DependencyService.Get<MyToast>().Display("Request Failed", false);
                 }
             });
         }
@@ -217,7 +229,16 @@ namespace PrescriptionFiller.ViewModel
         private void SelectedItemCommandAsync(object obj)
         {
             var data = SelectedItemInfoCommand;
-            PharmacyID = data.id.ToString();
+            //PharmacyID = data.id.ToString();
+            if (data != null)
+            {
+                PharmacyID = data.id.ToString();
+                Enable = true;
+            }
+            else
+            {
+                Enable = false;
+            }
         }
 
         public async void SearchCommandAsync(object obj)

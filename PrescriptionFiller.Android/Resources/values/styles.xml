@@ -12,12 +12,36 @@
         <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
         <!--<item name="colorAccent">#FF4081</item>-->
+        <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
     </style>
- <style name="SplashTheme" parent ="Theme.AppCompat.Light.NoActionBar">
+    <style name="SplashTheme" parent ="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_screen</item>
         <item name="android:windowNoTitle">true</item>  
         <item name="android:windowFullscreen">true</item>  
         <item name="android:windowContentOverlay">@null</item>  
-        <item name="android:windowActionBar">true</item>  
-  </style>
+        <item name="android:windowActionBar">true</item>
+        <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
+    </style>
+    <!--<style name="AppCompatDialogStyle" parent="Theme.AppCompat.DayNight.Dialog">
+        <item name="colorAccent">#FF0000</item>
+    </style>-->
+     <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">#FF0000</item>
+    </style>
+
+    <!--<style name="DatePickerRenderer" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">#009933</item>
+        header textcolor
+        <item name="android:textColorPrimaryInverse">#ff9900</item>
+        body background
+        <item name="android:windowBackground">#000099</item>
+        selected day
+        <item name="android:colorControlActivated">#ff8000</item>
+        days of the month
+        <item name="android:textColorPrimary">#ffff00</item>
+        days of the week
+        <item name="android:textColorSecondary">#ff0066</item>
+        cancel&ok
+        <item name="android:textColor">#00ffff</item>
+    </style>-->
 </resources>

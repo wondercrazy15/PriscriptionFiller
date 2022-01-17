@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using CoreLocation;
+//using CoreLocation;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using Xamarin.Essentials;

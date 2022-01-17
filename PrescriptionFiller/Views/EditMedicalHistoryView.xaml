@@ -32,11 +32,11 @@
             </Grid.RowDefinitions>
             <StackLayout Margin="10" Orientation="Vertical">
                 <Label Text="Shots/Vaccination" TextColor="Gray"/>
-                <Editor Placeholder="Enter something" Text="{Binding Shots}" HeightRequest="100" />
+                <Editor Placeholder="Enter something" Text="{Binding Shots}" BackgroundColor="White" HeightRequest="100" PlaceholderColor="Gray" TextColor="Black"/>
                 <Label Text="Medication" TextColor="Gray"/>
-                <Editor Placeholder="Enter something" Text="{Binding Medication}" HeightRequest="100"  />
+                <Editor Placeholder="Enter something" Text="{Binding Medication}" BackgroundColor="White" HeightRequest="100"  PlaceholderColor="Gray" TextColor="Black"/>
                 <Label Text="Notes" TextColor="Gray"/>
-                <Editor Placeholder="Enter something" Text="{Binding Notes}" HeightRequest="100"/>
+                <Editor Placeholder="Enter something" Text="{Binding Notes}" BackgroundColor="White" HeightRequest="100" PlaceholderColor="Gray" TextColor="Black"/>
                  <Button Text="Save" Command="{Binding SaveCommand}" Style="{StaticResource ButtonStyle}"/>
             </StackLayout>
         </Grid>
