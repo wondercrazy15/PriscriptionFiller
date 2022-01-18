@@ -167,26 +167,38 @@ namespace PrescriptionFiller.ViewModel
         }
         public async void getUserInfo()
         {
-                var result = await _userDetails.GetUserInfo();
-            if (result != null)
+            try
             {
-                Constants.user_id = result.data.id;
-                userInfoModel = result;
-                firstName = result.data.first_name;
-                lastName = result.data.last_name;
-                dob = result.data.date_of_birth;
-                gender = (result.data.sex).ToString();
-                phone = result.data.phone_number;
-                emailAdress = result.data.email;
-                allerigies = result.data.allergies;
-                medicalInsuranceProvider = result.data.medical_insurance_provider;
-                carrier = result.data.carrier_number;
-                plan = result.data.plan_number;
-                memberId = result.data.member_id;
-                issue = result.data.issue_number;
-                personalHeathNumber = result.data.personal_health_number;
-                await NewLoadingPopUp.Dismiss(_navigation);
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    var result = await _userDetails.GetUserInfo();
+                    if (result != null)
+                    {
+                        Constants.user_id = result.data.id;
+                        userInfoModel = result;
+                        firstName = result.data.first_name;
+                        lastName = result.data.last_name;
+                        string[] tempArray = result.data.date_of_birth.Split(' ');
+                        dob = tempArray[0];
+                        gender = (result.data.sex).ToString();
+                        phone = result.data.phone_number;
+                        emailAdress = result.data.email;
+                        allerigies = result.data.allergies;
+                        medicalInsuranceProvider = result.data.medical_insurance_provider;
+                        carrier = result.data.carrier_number;
+                        plan = result.data.plan_number;
+                        memberId = result.data.member_id;
+                        issue = result.data.issue_number;
+                        personalHeathNumber = result.data.personal_health_number;
+                        await NewLoadingPopUp.Dismiss(_navigation);
+                    }
+                });
             }
+            catch (Exception ex)
+            {
+
+            }
+                
         }
     }
 }

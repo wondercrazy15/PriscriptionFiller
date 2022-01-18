@@ -1,4 +1,5 @@
 ﻿using System;
+using Android.Graphics.Drawables;
 using PrescriptionFiller.CustomControls;
 using PrescriptionFiller.Droid.Renderer;
 using Xamarin.Forms;
@@ -12,9 +13,15 @@ namespace PrescriptionFiller.Droid.Renderer
         protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.DatePicker> e)
         {
             base.OnElementChanged(e);
+            if (e.OldElement == null)
+            {
+                Control.Background = null;
+                GradientDrawable gd = new GradientDrawable();
+                gd.SetStroke(0, Android.Graphics.Color.LightGray);
+                Control.SetBackgroundDrawable(gd);
+            }
 
             CustomDatePicker datePicker = (CustomDatePicker)Element;
-
             if (datePicker != null)
             {
                 SetTextColor(datePicker);
@@ -34,12 +41,10 @@ namespace PrescriptionFiller.Droid.Renderer
         protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);
-
             if (Control == null)
             {
                 return;
             }
-
             CustomDatePicker datePicker = (CustomDatePicker)Element;
 
             if (e.PropertyName == CustomDatePicker.TextColorProperty.PropertyName)
@@ -47,6 +52,7 @@ namespace PrescriptionFiller.Droid.Renderer
                 //this.Control.SetTextColor(datePicker.TextColor.ToAndroid());
                 this.Control.SetTextColor(Android.Graphics.Color.Black);
             }
+
         }
 
         void SetTextColor(CustomDatePicker datePicker)
