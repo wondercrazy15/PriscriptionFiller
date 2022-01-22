@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:customcontrols="clr-namespace:PrescriptionFiller.CustomControls"
+             xmlns:ads="clr-namespace:PrescriptionFiller.interfaces"
              x:Class="PrescriptionFiller.Views.LoginView" BackgroundColor="White" >
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -17,11 +18,15 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <Grid>
+        <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="White">
+            <StackLayout VerticalOptions="StartAndExpand">
+
+            </StackLayout>
+             <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Margin="20,0,20,0" RowSpacing="15" VerticalOptions="CenterAndExpand">
+            <Grid Grid.Row="0" Margin="20,0,20,0" RowSpacing="15" VerticalOptions="Center">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -51,8 +56,11 @@
                 </StackLayout>
                 <Button Grid.Row="3" Text="Forgot Password?" Command="{Binding ResetPassword}" BackgroundColor="Transparent" HorizontalOptions="End" TextColor="Black"/>
                 <Button Grid.Row="4" Text="Sign In" Command="{Binding SignInCommand}" x:Name="SignInButton" Style="{StaticResource ButtonStyle}"/>
-                <Button Grid.Row="5" Text="Sign Up" Command="{Binding SignUpCommand}" Style="{StaticResource ButtonStyle}"/>
+                <Button Grid.Row="5" Text="Sign Up" Command="{Binding SignUpCommand}" Style="{StaticResource ButtonStyle}"/>                
             </Grid>
         </Grid>
+             <ads:AdMobView VerticalOptions="EndAndExpand" WidthRequest="320" HeightRequest="100" />   
+        </StackLayout>
+       
     </ContentPage.Content>
 </ContentPage>
