@@ -22,7 +22,8 @@
             <StackLayout VerticalOptions="StartAndExpand">
 
             </StackLayout>
-             <Grid>
+            <ScrollView>
+                <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
@@ -59,7 +60,8 @@
                 <Button Grid.Row="5" Text="Sign Up" Command="{Binding SignUpCommand}" Style="{StaticResource ButtonStyle}"/>                
             </Grid>
         </Grid>
-             <ads:AdMobView VerticalOptions="EndAndExpand" WidthRequest="320" HeightRequest="100" />   
+            </ScrollView>             
+            <ads:AdMobView VerticalOptions="EndAndExpand" WidthRequest="320" HeightRequest="100" />   
         </StackLayout>
        
     </ContentPage.Content>
